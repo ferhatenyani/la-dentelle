@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;font-family:'Plus Jakarta Sans',sans-serif;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary-container":"#8c3a0b","on-error-container":"#93000a","primary-fixed-dim":"#90d3c7","on-secondary-fixed":"#251a00","on-surface-variant":"#3f4946","on-tertiary-fixed":"#351000","surface-tint":"#23695f","surface":"#f3fbf8","primary":"#00443d","tertiary":"#6a2700","surface-container-lowest":"#ffffff","on-surface":"#151d1b","surface-variant":"#dce4e1","surface-container-low":"#edf6f2","tertiary-fixed-dim":"#ffb694","inverse-on-surface":"#eaf3ef","tertiary-fixed":"#ffdbcc","on-primary-container":"#91d3c8","surface-container-highest":"#dce4e1","outline":"#6f7977","on-primary-fixed-variant":"#005048","secondary-container":"#fed269","background":"#f3fbf8","surface-container":"#e7f0ec","on-tertiary":"#ffffff","on-secondary":"#ffffff","inverse-primary":"#90d3c7","secondary-fixed-dim":"#ecc15a","primary-fixed":"#acefe3","secondary":"#775a00","surface-container-high":"#e1eae6","surface-dim":"#d3dcd8","primary-container":"#135d54","inverse-surface":"#2a3230","secondary-fixed":"#ffdf99","on-error":"#ffffff","on-background":"#151d1b","on-primary-fixed":"#00201c","on-tertiary-container":"#ffb695","on-secondary-container":"#765900","on-tertiary-fixed-variant":"#7b2f00","surface-bright":"#f3fbf8","on-secondary-fixed-variant":"#5a4300","error":"#ba1a1a","outline-variant":"#bfc9c5","on-primary":"#ffffff","error-container":"#ffdad6"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1.5rem","margin-md":"2.5rem","margin-lg":"4rem","space-lg":"1.5rem","margin":"1.5rem","gutter-lg":"2rem","space-xl":"2.5rem","space-xs":"0.25rem","gutter-sm":"1rem","space-sm":"0.5rem","space-md":"1rem"},"fontFamily":{"headline-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"display":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"display-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"]},"fontSize":{"headline-md":["26px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.02em","fontWeight":"600"}],"display":["48px",{"lineHeight":"56px","letterSpacing":"-0.03em","fontWeight":"700"}],"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"400"}],"display-mobile":["34px",{"lineHeight":"42px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(19,93,84,0.06)]"><div class="h-20 max-w-[1320px] mx-auto px-6 flex items-center justify-between gap-6"><div class="flex items-center gap-3 shrink-0"><a class="flex items-center gap-3 group" data-path="menu-commandes" href="#"><div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-primary-fixed shadow-sm transition-transform group-hover:scale-105"><span class="material-symbols-outlined text-[24px]">restaurant</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight uppercase leading-none">La Dentelle</span><span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.14em] mt-1 font-semibold">Gastronomie Algérienne &amp; Méditerranéenne</span></div></a></div><nav class="hidden lg:flex items-center gap-7 shrink-0" data-active-classes="text-primary font-bold border-b-2 border-primary-container"><a class="py-1.5 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors tracking-normal" data-path="menu-commandes" href="#">Menu &amp; Commandes</a><a class="py-1.5 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors tracking-normal" data-path="nos-specialites" href="#">Nos Spécialités</a><a class="py-1.5 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors tracking-normal" data-path="suivi-en-direct" href="#">Suivi en Direct</a><a class="py-1.5 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors tracking-normal" data-path="a-propos" href="#">À Propos</a></nav><div class="flex items-center gap-3 shrink-0"><button aria-label="Rechercher un plat" class="w-9 h-9 rounded-full bg-surface-container-lowest border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/30 transition-all shadow-sm" type="button"><span class="material-symbols-outlined text-[19px]">search</span></button><div class="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-low border border-outline-variant/30 text-on-surface"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-md text-label-md text-on-surface-variant font-medium">Livraison Alger &amp; Environs</span></div><a class="flex items-center gap-2.5 px-4 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/40 hover:border-primary hover:bg-surface-container-low transition-all shadow-sm" data-path="panier-commande" href="#"><span class="material-symbols-outlined text-primary text-[20px]">shopping_bag</span><span class="font-label-md text-label-md text-primary font-bold">3 articles · 4 800 DA</span></a><a aria-label="Profil client" class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-primary-container transition-colors shadow-sm" data-path="profil-fidelite" href="#"><span class="material-symbols-outlined text-[18px]">person</span></a></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- Subtle decorative ambient glow & top architectural badge -->
+<div class="relative w-full max-w-[1320px] mx-auto px-6 pt-8 pb-4">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-6 h-[2px] bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-secondary font-bold">Carte Gastronomique · Terroirs d'Algérie</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Nos Créations Culinaires</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mt-1">
+          L'alliance raffinée des recettes séculaires d'Alger, de Constantine et des Hauts Plateaux, magnifiées par nos maîtres queux et servies chaudes à votre table.
+        </p>
+</div>
+<!-- Quick Delivery & Freshness Guarantee Card -->
+<div class="flex items-center gap-4 bg-surface-container-lowest px-5 py-3.5 rounded-xl shadow-sm border border-outline-variant/30 shrink-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold leading-tight">100% Viandes Locales &amp; Épices Nobles</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight mt-0.5">Livraison isotherme express Alger &amp; Hydra</span>
+</div>
+</div>
+</div>
+<!-- Refined Structured Filter Section -->
+<div class="sticky top-20 z-30 -mx-6 px-6 py-4 bg-surface/95 backdrop-blur-xl transition-all shadow-[0_4px_20px_rgba(0,68,61,0.04)] border-y border-outline-variant/25">
+<div class="flex flex-col gap-3.5 max-w-[1320px] mx-auto">
+<!-- Level 1: Primary Category Tabs -->
+<div class="flex items-center justify-between gap-4">
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-0.5" id="category-pills">
+<button class="cat-pill active px-4 py-2 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-bold whitespace-nowrap transition-all shadow-sm" data-category="all">
+        Toutes nos créations
+      </button>
+<button class="cat-pill px-4 py-2 rounded-xl bg-surface-container-lowest border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-primary/40 font-label-md text-label-md font-medium whitespace-nowrap transition-all shadow-sm" data-category="entrees">
+        Entrées &amp; Boureks
+      </button>
+<button class="cat-pill px-4 py-2 rounded-xl bg-surface-container-lowest border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-primary/40 font-label-md text-label-md font-medium whitespace-nowrap transition-all shadow-sm" data-category="traditionnels">
+        Plats de Terroir
+      </button>
+<button class="cat-pill px-4 py-2 rounded-xl bg-surface-container-lowest border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-primary/40 font-label-md text-label-md font-medium whitespace-nowrap transition-all shadow-sm" data-category="tajines">
+        Tajines &amp; Mijotés
+      </button>
+<button class="cat-pill px-4 py-2 rounded-xl bg-surface-container-lowest border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-primary/40 font-label-md text-label-md font-medium whitespace-nowrap transition-all shadow-sm" data-category="grillades">
+        Grillades &amp; Rôtisserie
+      </button>
+<button class="cat-pill px-4 py-2 rounded-xl bg-surface-container-lowest border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-primary/40 font-label-md text-label-md font-medium whitespace-nowrap transition-all shadow-sm" data-category="pains">
+        Pains &amp; Accompagnements
+      </button>
+<button class="cat-pill px-4 py-2 rounded-xl bg-surface-container-lowest border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-primary/40 font-label-md text-label-md font-medium whitespace-nowrap transition-all shadow-sm" data-category="douceurs">
+        Douceurs &amp; Pâtisseries
+      </button>
+</div>
+</div>
+<!-- Level 2: Search Bar + Sort Dropdown -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pt-1">
+<!-- Integrated Search Input -->
+<div class="relative flex-1 max-w-xl">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full h-10 pl-10 pr-9 bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-md text-body-md rounded-xl border border-outline-variant/40 focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container/20 shadow-sm transition-all" id="dish-search" placeholder="Rechercher Rechta, Chorba, Makrout, Bourek..." type="text"/>
+<button class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-primary text-[18px] material-symbols-outlined" id="clear-search-btn" title="Effacer la recherche" type="button">close</button>
+</div>
+<!-- Quick Sort Dropdown + Reset Action -->
+<div class="flex items-center gap-3 shrink-0">
+<div class="flex items-center gap-2 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-3 py-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-outline">tune</span>
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold uppercase tracking-wider whitespace-nowrap" for="sort-select">Trier :</label>
+<select class="bg-transparent font-label-md text-label-md text-primary font-semibold border-none focus:ring-0 cursor-pointer pr-6 py-0 pl-1" id="sort-select">
+<option selected="" value="popularite">Populaire</option>
+<option value="prix-asc">Prix croissant</option>
+<option value="prix-desc">Prix décroissant</option>
+<option value="temps">Temps de préparation</option>
+</select>
+</div>
+<button class="hidden items-center gap-1.5 px-3 py-2 rounded-xl text-error hover:bg-error-container/30 font-label-md text-label-md font-semibold transition-colors" id="reset-filters-btn" type="button">
+<span class="material-symbols-outlined text-[17px]">restart_alt</span>
+<span>Réinitialiser</span>
+</button>
+</div>
+</div>
+<!-- Level 3: Dietary & Terroir Tags Bar -->
+<div class="flex flex-wrap items-center gap-2 pt-1 border-t border-outline-variant/15" id="dietary-filter-container">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-bold mr-1 shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">label</span>
+      Labels :
+    </span>
+<button class="diet-chip active px-3 py-1.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-semibold transition-all shrink-0 flex items-center gap-1.5 shadow-sm" data-filter="all-diet">
+      Tous les labels
+    </button>
+<button class="diet-chip px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-primary font-label-md text-label-md font-medium transition-all shrink-0 flex items-center gap-1.5 shadow-sm" data-filter="Terroir Algérien">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+      Terroir Algérien
+    </button>
+<button class="diet-chip px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-primary font-label-md text-label-md font-medium transition-all shrink-0 flex items-center gap-1.5 shadow-sm" data-filter="Halal Certifié">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+      100% Halal Certifié
+    </button>
+<button class="diet-chip px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-primary font-label-md text-label-md font-medium transition-all shrink-0 flex items-center gap-1.5 shadow-sm" data-filter="Végétarien">
+<span class="w-2 h-2 rounded-full bg-surface-tint"></span>
+      Végétarien
+    </button>
+<button class="diet-chip px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-primary font-label-md text-label-md font-medium transition-all shrink-0 flex items-center gap-1.5 shadow-sm" data-filter="Sans Gluten">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></span>
+      Sans Gluten
+    </button>
+<button class="diet-chip px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-primary font-label-md text-label-md font-medium transition-all shrink-0 flex items-center gap-1.5 shadow-sm" data-filter="Épicé Doux">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+      Épicé Doux
+    </button>
+<button class="diet-chip px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-primary font-label-md text-label-md font-medium transition-all shrink-0 flex items-center gap-1.5 shadow-sm" data-filter="Recette Signature">
+<span class="material-symbols-outlined text-[13px] text-secondary">star</span>
+      Recette Signature
+    </button>
+<div class="ml-auto hidden sm:flex items-center text-outline font-label-sm text-label-sm" id="results-count-wrapper">
+<span class="font-bold text-primary mr-1" id="results-count">9</span> créations affichées
+    </div>
+</div>
+</div>
+</div>
+<!-- Dishes Responsive Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-6 pb-28" id="dishes-grid">
+<!-- Dish 1: Rechta Algéroise -->
+<article class="dish-item flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group" data-category="traditionnels" data-diet="Terroir Algérien,Halal Certifié,Recette Signature" data-popular="10" data-price="2600" data-time="30">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Exquisite plate of authentic Rechta Algéroise, delicate handcrafted thin pasta ribbons simmered with tender farm poulet fermier and sweet white turnip quarters in a transparent fragrant cinnamon broth, garnished with fresh flat-leaf parsley and golden chickpea pearls, shot in warm natural ambient restaurant light on a porcelain coupe plate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPx_NKrAWZsPJI0jYRLNsNp2hGHI8GrPiB8AciVmgXZ0LvBa2p-dXX4IuVwNC7iZ-r97nETJsAvqOQIsl7aYyYlOmS99HiHemfLTPBvr6lcheQaibIAs5RJtz7xKIzCMqn2B3pf2r3aK9llvrz8Z_ecoPwhwTbxUqhkdNaZKCfxXjL3T-VBvyGOy4CNl0Pjwzz3dQj_U_qgFaAYaTRMIPB5N4Gm_aam7wxD7IpzyOT"/>
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-secondary font-bold tracking-wider uppercase">
+              Terroir Algérois
+            </span>
+</div>
+<span class="absolute bottom-3 right-3 px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold">
+            Incontournable
+          </span>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex items-start justify-between gap-3 mb-1.5">
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors">Rechta Algéroise Impériale</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap">2 600 DA</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+              Lanières de pâte fine artisanale étuvées au beurre de ferme, poulet fermier doré, navets blancs fondants et jus parfumé à la cannelle de Ceylan.
+            </p>
+<div class="flex items-center gap-2 mt-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-primary">spa</span> Terroir Algérien
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-primary">verified</span> Halal Certifié
+              </span>
+</div>
+</div>
+<div class="pt-5 flex items-center justify-between border-t border-outline-variant/20 mt-4">
+<span class="font-label-sm text-label-sm text-secondary font-bold tracking-wide uppercase">Navets doux &amp; Pois Chiches</span>
+<button class="h-10 px-4 rounded-xl bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md font-bold flex items-center gap-1.5 transition-all active:scale-95 shadow-sm" onclick="addToTastingCart('Rechta Algéroise Impériale', 2600)">
+<span class="material-symbols-outlined text-[18px]">add</span>
+              Ajouter
+            </button>
+</div>
+</div>
+</article>
+<!-- Dish 2: Couscous Royal Constantinois -->
+<article class="dish-item flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group" data-category="traditionnels" data-diet="Terroir Algérien,Halal Certifié,Recette Signature" data-popular="9" data-price="3600" data-time="45">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Artisanal Couscous Royal Constantinois served in a handcrafted dark teal ceramic tagine dish, fine golden semolina rolled by hand, crowned with slow-braised tender lamb shank, merguez sausage, baby zucchini, golden squash, and rich amber saffron-infused bouillon in a side pourer." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTUIT904v71PlBmmLAdu5_Yzth9gtkWFy15DyoJeQ-G_rceMAHBa10G9u7vPkwjF66MZ_1rBpbFiCFrsO7aTD3YWEYT7og_NYFD_mzPte-dwCXd4VR__6qrjweJ3dYqydvbPrbL4G3XoVbEYBYnqizNLHhVsQp3-XoxssjbWBJE6bvQjsEBFKYClSW0XwFsnEDMPfh12NdO56XYOuUlHXx7EVKrJHQN9w3DjYAfElA"/>
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-secondary font-bold tracking-wider uppercase">
+              Constantinois
+            </span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex items-start justify-between gap-3 mb-1.5">
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors">Couscous Royal Constantinois</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap">3 600 DA</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+              Semoule extra-fine roulée à la main, souris d'agneau des Hauts Plateaux confite 7 heures, légumes de saison et bouillon safrané de Tizi Ouzou.
+            </p>
+<div class="flex items-center gap-2 mt-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-primary">spa</span> Terroir Algérien
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-primary">verified</span> Halal Certifié
+              </span>
+</div>
+</div>
+<div class="pt-5 flex items-center justify-between border-t border-outline-variant/20 mt-4">
+<span class="font-label-sm text-label-sm text-secondary font-bold tracking-wide uppercase">Agneau Confit &amp; Légumes Nobles</span>
+<button class="h-10 px-4 rounded-xl bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md font-bold flex items-center gap-1.5 transition-all active:scale-95 shadow-sm" onclick="addToTastingCart('Couscous Royal Constantinois', 3600)">
+<span class="material-symbols-outlined text-[18px]">add</span>
+              Ajouter
+            </button>
+</div>
+</div>
+</article>
+<!-- Dish 3: Chorba Frik Traditionnelle -->
+<article class="dish-item flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group" data-category="entrees" data-diet="Terroir Algérien,Halal Certifié,Épicé Doux" data-popular="8" data-price="1400" data-time="20">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Deep bowl of steaming Chorba Frik with green crushed durum wheat, finely minced tender lamb cubes, fresh mint chiffonade, coriander, served with lemon wedges and crisp golden bourek rolls on the side on a slate platter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzIC_IivDuvmsCQnycu8cwNVtcRCAaIZc1rBgiItY19bhRHixUGJgnZrEW4w_LbBLJBRhr2t-qLtN1ktuEJEjeGNzD9VyvN0DSHQCaIhoYhjGshatW6MWaQpBcH6RvssfE_FZ2p-_SZhm6XcoW_ocbnrLMZ6XHnTE03wxJSrMMD04QCO_grjExN19lWqrfNEr9HcvJ7vUsRhASHA9dRvOdv4FS9uwJsUQY6HPLuNZc"/>
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-secondary font-bold tracking-wider uppercase">
+              Recette Ancestrale
+            </span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex items-start justify-between gap-3 mb-1.5">
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors">Chorba Frik au Blé Vert</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap">1 400 DA</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+              Blé vert concassé grillé de Sétif, agneau braisé, coriandre fraîche, menthe sauvage et concassée de tomates de Mitidja lentement mijotée.
+            </p>
+<div class="flex items-center gap-2 mt-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-primary">local_fire_department</span> Frik de Sétif
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-primary">verified</span> Halal Certifié
+              </span>
+</div>
+</div>
+<div class="pt-5 flex items-center justify-between border-t border-outline-variant/20 mt-4">
+<span class="font-label-sm text-label-sm text-secondary font-bold tracking-wide uppercase">Servi avec Citron &amp; Menthe</span>
+<button class="h-10 px-4 rounded-xl bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md font-bold flex items-center gap-1.5 transition-all active:scale-95 shadow-sm" onclick="addToTastingCart('Chorba Frik au Blé Vert', 1400)">
+<span class="material-symbols-outlined text-[18px]">add</span>
+              Ajouter
+            </button>
+</div>
+</div>
+</article>
+<!-- Dish 4: Assortiment de Boureks Traditionnels -->
+<article class="dish-item flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group" data-category="entrees" data-diet="Halal Certifié,Recette Signature" data-popular="7" data-price="1800" data-time="15">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Golden crisp Algerian Boureks fried to perfection with feuille de dyoul, arranged in a fan on a stylish ceramic plate with lime wedges, filled with spiced minced meat, béchamel with local cheese, and sautéed shrimp with parsley." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpRBuJ2OWUZtykjlmhVn27JAqz15jqk_5xa5IEdsDswtYSoFq0DC0CvUB3iP_Jx4jakQua-Nb6v0EbhXg4w_SkVvRGt99us-ZK5ekTSLSJxAkhO3HZxLx6e7MZZRvtZheqUwiHbFQrIXt7EfuaqMDJiDx5S2xuct6jGxmi585lh3fLZeEm4icWI5jaibNxtDc7Av7GBY0kfqZGUHj8eE_n2VMMTRd9VWqkheVPMYI_"/>
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-secondary font-bold tracking-wider uppercase">
+              Dyouls Artisanaux
+            </span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex items-start justify-between gap-3 mb-1.5">
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors">Trio de Boureks Croustillants</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap">1 800 DA</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+              Feuilles de brick faites maison : 1x Viande hachée épicée &amp; œuf coulant, 1x Crevettes sauvages de la baie &amp; persil, 1x Fromage frais d'El Tarf.
+            </p>
+<div class="flex items-center gap-2 mt-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-primary">verified</span> Halal Certifié
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-secondary">set_meal</span> Fruits de Mer
+              </span>
+</div>
+</div>
+<div class="pt-5 flex items-center justify-between border-t border-outline-variant/20 mt-4">
+<span class="font-label-sm text-label-sm text-secondary font-bold tracking-wide uppercase">3 Pièces Signature</span>
+<button class="h-10 px-4 rounded-xl bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md font-bold flex items-center gap-1.5 transition-all active:scale-95 shadow-sm" onclick="addToTastingCart('Trio de Boureks Croustillants', 1800)">
+<span class="material-symbols-outlined text-[18px]">add</span>
+              Ajouter
+            </button>
+</div>
+</div>
+</article>
+<!-- Dish 5: Tajine Lham Lahlou aux Fruits Dorés -->
+<article class="dish-item flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group" data-category="tajines" data-diet="Terroir Algérien,Halal Certifié,Sans Gluten,Épicé Doux" data-popular="6" data-price="2900" data-time="35">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Traditional Algerian Tajine Lham Lahlou sweet and savory dish, tender lamb morsels surrounded by plump dried prunes, golden apricots, poached conference pears, toasted blanched almonds, and fragrant orange blossom glaze, garnished with toasted sesame seeds." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFQMVewmfB4l0W8m-KQhmuss5_B_lTstzi4B887DdsOc7NxxJoLVFFJnE_IrRFmLNgBPfPUb2uku8Ja3sx7Ko_8mkQqrfKhkK8NSMwVAOWH23vP-d-RB-MCETcJWZOUbOWIF6gHeehb-fXjrEu6I3tfoy_hxzWy23EjcftjkJbzXJ3xzLyQb6Ida5agM4_0oFNW2bD5Tk3qJuIw-cn6Au0M2G3s-r7Hwe_5VqNuqpg"/>
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-secondary font-bold tracking-wider uppercase">
+              Mets Impérial
+            </span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex items-start justify-between gap-3 mb-1.5">
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors">Tajine Lham Lahlou aux Fruits Dorés</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap">2 900 DA</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+              Mijoté doux d'agneau tendre, pruneaux fondants, abricots secs, poires pochées à l'eau de fleur d'oranger de Blida et amandes effilées grillées.
+            </p>
+<div class="flex items-center gap-2 mt-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-primary">spa</span> Fleur d'Oranger Blida
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+                Sans Gluten
+              </span>
+</div>
+</div>
+<div class="pt-5 flex items-center justify-between border-t border-outline-variant/20 mt-4">
+<span class="font-label-sm text-label-sm text-secondary font-bold tracking-wide uppercase">Douceur &amp; Épices douces</span>
+<button class="h-10 px-4 rounded-xl bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md font-bold flex items-center gap-1.5 transition-all active:scale-95 shadow-sm" onclick="addToTastingCart('Tajine Lham Lahlou', 2900)">
+<span class="material-symbols-outlined text-[18px]">add</span>
+              Ajouter
+            </button>
+</div>
+</div>
+</article>
+<!-- Dish 6: Mechoui d'Agneau des Hauts Plateaux -->
+<article class="dish-item flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group" data-category="grillades" data-diet="Terroir Algérien,Halal Certifié,Sans Gluten,Recette Signature" data-popular="5" data-price="3900" data-time="40">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Mouthwatering succulent slow-roasted Mechoui lamb shoulder from Algerian highlands, with crispy caramelized skin seasoned with cumin, garlic, and wild thyme, served with smoked roasted green peppers Hmiss on a fine wooden presentation board." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJXp01DA9TfNARiFQq5qHSDJBbGlxfH2_M6Q7feVVlnVLR9g2E9n27daG-Ki6noRvK-zpIP_G1Yd1naKFktjus0e8CySgLLL2A16J7Kk8BO6hgGK0bI4-fEjFyFnHkI8jKO5Z0wz56gl7NRbviFWVR1W1KwZFoCcGI3NXdZufU3wHUcbomBILX6At1t_KUFLTdUuMOpeWq3tL9CPOQy8jyGKr6iJTNy8HSr_cmvUiB"/>
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-secondary font-bold tracking-wider uppercase">
+              Rôtisserie Noble
+            </span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex items-start justify-between gap-3 mb-1.5">
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors">Épaule de Mechoui Fumée &amp; Hmiss</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap">3 900 DA</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+              Agneau nourri au thym sauvage des steppes, rôti lentement au feu de bois d'olivier. Accompagné de Hmiss grillé à l'huile de Kabylie.
+            </p>
+<div class="flex items-center gap-2 mt-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-primary">local_fire_department</span> Braisé au Bois d'Olivier
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+                Sans Gluten
+              </span>
+</div>
+</div>
+<div class="pt-5 flex items-center justify-between border-t border-outline-variant/20 mt-4">
+<span class="font-label-sm text-label-sm text-secondary font-bold tracking-wide uppercase">Pour les Amateurs de Viande</span>
+<button class="h-10 px-4 rounded-xl bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md font-bold flex items-center gap-1.5 transition-all active:scale-95 shadow-sm" onclick="addToTastingCart('Épaule de Mechoui Fumée', 3900)">
+<span class="material-symbols-outlined text-[18px]">add</span>
+              Ajouter
+            </button>
+</div>
+</div>
+</article>
+<!-- Dish 7: Corbeille Pains Traditionnels (Kesra & Khobz Dar) -->
+<article class="dish-item flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group" data-category="pains" data-diet="Végétarien,Terroir Algérien" data-popular="4" data-price="850" data-time="10">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Artisanal basket of traditional Algerian breads: crisp rustic semolina Kesra with diamond scored patterns and warm fluffy golden Khobz Dar brioche bread topped with black nigella seeds and sesame seeds, wrapped in clean linen cloth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj0r0tV01rRwUmbikfF-gyM4BOQT2QckBh75iJOVWyUITzJA2Mbs3CCIT5OwaYbfsstroTeMt_VrJtyu0GrxrQzF6odLRFoQ0W44ONN8X0iQ0tcL0Dfzy7QtDqmuHylt_1qAbL43AxctF65NRjC7mcvY3OKs8wlcrFqSuTldFIcryhZhfWF8xTsYiUm90l_vv5T73qQWtDNdTY4RbROpwpkQgfxAHvNDT1kMbuiBUc"/>
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-secondary font-bold tracking-wider uppercase">
+              Four Traditionnel
+            </span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex items-start justify-between gap-3 mb-1.5">
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors">Duo Kesra &amp; Khobz Dar Artisanal</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap">850 DA</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+              Kesra galette croustillante à la semoule d'or et huile vierge de Kabylie + Khobz Dar brioché moelleux aux graines de nigelle (Sanoudj).
+            </p>
+<div class="flex items-center gap-2 mt-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-primary">eco</span> Végétarien
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+                Pétri Chaque Matin
+              </span>
+</div>
+</div>
+<div class="pt-5 flex items-center justify-between border-t border-outline-variant/20 mt-4">
+<span class="font-label-sm text-label-sm text-secondary font-bold tracking-wide uppercase">4 Portions Généreuses</span>
+<button class="h-10 px-4 rounded-xl bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md font-bold flex items-center gap-1.5 transition-all active:scale-95 shadow-sm" onclick="addToTastingCart('Duo Kesra &amp; Khobz Dar', 850)">
+<span class="material-symbols-outlined text-[18px]">add</span>
+              Ajouter
+            </button>
+</div>
+</div>
+</article>
+<!-- Dish 8: Plateau Pâtisseries Fines Algéroises -->
+<article class="dish-item flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group" data-category="douceurs" data-diet="Végétarien,Terroir Algérien,Recette Signature" data-popular="3" data-price="2200" data-time="15">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Exquisite luxury platter of traditional Algerian pastries: glistening diamond cut Makrout el Louz soaked in pure orange blossom water and snowy sugar, sculptured Dziriette with pinched almond borders, and spiral crispy M'hancha crowned with crushed pistachios." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcyxSvk2kgDvcl_1k96P-ZooTaOGop3n-tmDLBL-Ov66tiWpDhgCM8bj-nc6EBnD7a4gQafnQlLJ_UhBVZ763buo1d8NSBU3CcBDMfe_ZL_X8ekT_0z7cKyhJU_f2gG3kZtxoj1bDHnWcNxWc88bfPVU4JPTp0VtmuJ1dm_u1iKauGgeII1IcCmUeWY2kuq7TsNECzFvgwnJ0M8_45JGw9tWLb9asKHTS8qlYj4H82"/>
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-secondary font-bold tracking-wider uppercase">
+              Haute Confiserie
+            </span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex items-start justify-between gap-3 mb-1.5">
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors">Grand Plateau Pâtisseries Fines</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap">2 200 DA</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+              6 chefs-d'œuvre de la Casbah : Makrout el Louz fondant, Dziriettes aux amandes parfumées au citron vert, et M'hancha au miel de jujubier pur.
+            </p>
+<div class="flex items-center gap-2 mt-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-secondary">star</span> 100% Amandes Pures
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-primary">eco</span> Végétarien
+              </span>
+</div>
+</div>
+<div class="pt-5 flex items-center justify-between border-t border-outline-variant/20 mt-4">
+<span class="font-label-sm text-label-sm text-secondary font-bold tracking-wide uppercase">6 Pièces de Dégustation</span>
+<button class="h-10 px-4 rounded-xl bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md font-bold flex items-center gap-1.5 transition-all active:scale-95 shadow-sm" onclick="addToTastingCart('Plateau Pâtisseries Fines', 2200)">
+<span class="material-symbols-outlined text-[18px]">add</span>
+              Ajouter
+            </button>
+</div>
+</div>
+</article>
+<!-- Dish 9: Tajine Zitoune au Veau de Lait & Champignons Sauvages -->
+<article class="dish-item flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group" data-category="tajines" data-diet="Terroir Algérien,Halal Certifié,Sans Gluten,Épicé Doux" data-popular="2" data-price="2700" data-time="30">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Gourmet Algerian Tajine Zitoune with tender milk-fed veal chunks, pitted green olives desalted to perfection, sliced baby carrots, and sautéed wild forest mushrooms in a velvety turmeric and parsley reduction sauce, served on modern cream earthenware." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvdyqjvAKP7Z1Hl7_Rdf2CZWZU9rIYX8iF-YwHTa0yGby-V_4ZHqlemrddU_8D-4v6c3xKUKVdCOeA62bcS_nwsQGwAr8G59puxSywlhGBoWPRy6cI9GwaiBsKd0H5ZOBlte9U1lEKhrBBw9o8oyoJjPZcYKkRbI7GbhoYg0CDqkZerk6A7794LaFvq2w0cLxvGZIAEIGJiWqitTeWd2_7f_cBcc9dUIASlbShYh9p"/>
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-secondary font-bold tracking-wider uppercase">
+              Mijoté Réconfortant
+            </span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex items-start justify-between gap-3 mb-1.5">
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors">Tajine Zitoune au Veau de Lait</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap">2 700 DA</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+              Médaillons de veau fondants, olives vertes de Sig dessalées à l'eau de source, carottes fondantes et réduction soyeuse au curcuma doux.
+            </p>
+<div class="flex items-center gap-2 mt-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-primary">verified</span> Halal Certifié
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+                Sans Gluten
+              </span>
+</div>
+</div>
+<div class="pt-5 flex items-center justify-between border-t border-outline-variant/20 mt-4">
+<span class="font-label-sm text-label-sm text-secondary font-bold tracking-wide uppercase">Olives de Sig &amp; Curcuma</span>
+<button class="h-10 px-4 rounded-xl bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md font-bold flex items-center gap-1.5 transition-all active:scale-95 shadow-sm" onclick="addToTastingCart('Tajine Zitoune au Veau', 2700)">
+<span class="material-symbols-outlined text-[18px]">add</span>
+              Ajouter
+            </button>
+</div>
+</div>
+</article>
+</div>
+<!-- Empty State if no dishes found -->
+<div class="hidden flex-col items-center justify-center py-16 text-center" id="no-results-state">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-outline mb-4">
+<span class="material-symbols-outlined text-[32px]">dinner_dining</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Aucune création trouvée</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-md">
+    Aucun mets ne correspond à vos critères actuels. Essayez de réinitialiser vos filtres ou de modifier votre recherche.
+  </p>
+<button class="mt-4 px-5 py-2.5 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-bold hover:bg-primary transition-all shadow-sm" onclick="resetAllFilters()">
+    Réinitialiser les critères
+  </button>
+</div>
+</div>
+<!-- Sticky Bottom Floating Tasting Cart Pill -->
+<aside class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 w-[92%] max-w-[760px] bg-primary text-on-primary rounded-full px-5 py-3 shadow-[0_12px_36px_rgba(0,68,61,0.28)] flex items-center justify-between gap-4 transition-all duration-300" id="sticky-cart-bar">
+<div class="flex items-center gap-3.5 min-w-0">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary shrink-0 relative">
+<span class="material-symbols-outlined text-[20px]">room_service</span>
+<span class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm font-bold flex items-center justify-center" id="cart-counter">3</span>
+</div>
+<div class="flex flex-col truncate">
+<span class="font-label-md text-label-md text-primary-fixed font-bold uppercase tracking-wider">Votre Commande Festive</span>
+<span class="font-headline-sm text-headline-sm text-on-primary font-bold tracking-tight" id="cart-total-display">4 800 DA</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<div class="hidden sm:flex flex-col items-end text-right">
+<span class="font-label-sm text-label-sm text-primary-fixed-dim">Temps estimé de préparation</span>
+<span class="font-label-md text-label-md text-on-primary font-semibold">30 - 45 min · Chaud garanti</span>
+</div>
+<a class="h-11 px-5 rounded-full bg-secondary-container hover:bg-secondary-fixed text-on-secondary-container font-label-md text-label-md font-bold flex items-center gap-2 transition-transform active:scale-95 shadow-sm" data-path="panier-commande" href="#">
+<span>Commander</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</aside>
+</div>
+<script>
+  let cartCount = 3;
+  let cartSubtotal = 4800;
+
+  function addToTastingCart(name, price) {
+    cartCount += 1;
+    cartSubtotal += price;
+
+    const counterEl = document.getElementById('cart-counter');
+    const totalEl = document.getElementById('cart-total-display');
+    const cartBar = document.getElementById('sticky-cart-bar');
+
+    if (counterEl) counterEl.textContent = cartCount;
+    if (totalEl) totalEl.textContent = cartSubtotal.toLocaleString('fr-DZ') + ' DA';
+
+    // Micro-interaction bounce
+    if (cartBar) {
+      cartBar.classList.add('scale-105');
+      setTimeout(() => {
+        cartBar.classList.remove('scale-105');
+      }, 180);
+    }
+  }
+
+  // Enhanced Filter, Search, and Sort Logic
+  const catButtons = document.querySelectorAll('#category-pills button');
+  const dishGrid = document.getElementById('dishes-grid');
+  let dishCards = Array.from(document.querySelectorAll('.dish-item'));
+  const searchInput = document.getElementById('dish-search');
+  const clearSearchBtn = document.getElementById('clear-search-btn');
+  const dietButtons = document.querySelectorAll('#dietary-filter-container .diet-chip');
+  const sortSelect = document.getElementById('sort-select');
+  const resetBtn = document.getElementById('reset-filters-btn');
+  const resultsCountEl = document.getElementById('results-count');
+  const noResultsState = document.getElementById('no-results-state');
+
+  let activeCategory = 'all';
+  let activeDiet = 'all-diet';
+  let searchTerm = '';
+
+  function updateResetButtonVisibility() {
+    const isFiltered = (activeCategory !== 'all') || (activeDiet !== 'all-diet') || (searchTerm !== '');
+    if (resetBtn) {
+      if (isFiltered) {
+        resetBtn.classList.remove('hidden');
+        resetBtn.classList.add('inline-flex');
+      } else {
+        resetBtn.classList.add('hidden');
+        resetBtn.classList.remove('inline-flex');
+      }
+    }
+    if (clearSearchBtn) {
+      if (searchTerm.length > 0) {
+        clearSearchBtn.classList.remove('hidden');
+      } else {
+        clearSearchBtn.classList.add('hidden');
+      }
+    }
+  }
+
+  function sortCards() {
+    const sortVal = sortSelect.value;
+    dishCards.sort((a, b) => {
+      const priceA = parseInt(a.getAttribute('data-price') || '0', 10);
+      const priceB = parseInt(b.getAttribute('data-price') || '0', 10);
+      const popA = parseInt(a.getAttribute('data-popular') || '0', 10);
+      const popB = parseInt(b.getAttribute('data-popular') || '0', 10);
+      const timeA = parseInt(a.getAttribute('data-time') || '0', 10);
+      const timeB = parseInt(b.getAttribute('data-time') || '0', 10);
+
+      if (sortVal === 'prix-asc') return priceA - priceB;
+      if (sortVal === 'prix-desc') return priceB - priceA;
+      if (sortVal === 'temps') return timeA - timeB;
+      // popularite default
+      return popB - popA;
+    });
+
+    dishCards.forEach(card => dishGrid.appendChild(card));
+  }
+
+  function filterCards() {
+    let visibleCount = 0;
+
+    dishCards.forEach(card => {
+      const cardCat = card.getAttribute('data-category');
+      const cardDiets = card.getAttribute('data-diet') || '';
+      const text = card.textContent.toLowerCase();
+
+      const matchesCat = (activeCategory === 'all') || (cardCat === activeCategory);
+      const matchesDiet = (activeDiet === 'all-diet') || cardDiets.includes(activeDiet);
+      const matchesSearch = text.includes(searchTerm);
+
+      if (matchesCat && matchesDiet && matchesSearch) {
+        card.style.display = 'flex';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (resultsCountEl) resultsCountEl.textContent = visibleCount;
+
+    if (noResultsState) {
+      if (visibleCount === 0) {
+        noResultsState.classList.remove('hidden');
+        noResultsState.classList.add('flex');
+        dishGrid.classList.add('hidden');
+      } else {
+        noResultsState.classList.add('hidden');
+        noResultsState.classList.remove('flex');
+        dishGrid.classList.remove('hidden');
+      }
+    }
+
+    updateResetButtonVisibility();
+  }
+
+  catButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      catButtons.forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary', 'font-bold');
+        b.classList.add('bg-surface-container-lowest', 'border', 'border-outline-variant/40', 'text-on-surface-variant', 'font-medium');
+      });
+      btn.classList.remove('bg-surface-container-lowest', 'border', 'border-outline-variant/40', 'text-on-surface-variant', 'font-medium');
+      btn.classList.add('bg-primary', 'text-on-primary', 'font-bold');
+      activeCategory = btn.getAttribute('data-category');
+      filterCards();
+    });
+  });
+
+  dietButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      dietButtons.forEach(b => {
+        b.classList.remove('bg-primary-container', 'text-on-primary', 'font-semibold');
+        b.classList.add('bg-surface-container-lowest', 'border', 'border-outline-variant/40', 'text-on-surface-variant', 'font-medium');
+      });
+      btn.classList.remove('bg-surface-container-lowest', 'border', 'border-outline-variant/40', 'text-on-surface-variant', 'font-medium');
+      btn.classList.add('bg-primary-container', 'text-on-primary', 'font-semibold');
+      activeDiet = btn.getAttribute('data-filter');
+      filterCards();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchTerm = e.target.value.toLowerCase().trim();
+      filterCards();
+    });
+  }
+
+  if (clearSearchBtn) {
+    clearSearchBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      searchTerm = '';
+      filterCards();
+      searchInput.focus();
+    });
+  }
+
+  if (sortSelect) {
+    sortSelect.addEventListener('change', () => {
+      sortCards();
+      filterCards();
+    });
+  }
+
+  function resetAllFilters() {
+    activeCategory = 'all';
+    activeDiet = 'all-diet';
+    searchTerm = '';
+    if (searchInput) searchInput.value = '';
+
+    // Reset Cat Pills
+    catButtons.forEach(b => {
+      if (b.getAttribute('data-category') === 'all') {
+        b.classList.add('bg-primary', 'text-on-primary', 'font-bold');
+        b.classList.remove('bg-surface-container-lowest', 'border', 'border-outline-variant/40', 'text-on-surface-variant', 'font-medium');
+      } else {
+        b.classList.remove('bg-primary', 'text-on-primary', 'font-bold');
+        b.classList.add('bg-surface-container-lowest', 'border', 'border-outline-variant/40', 'text-on-surface-variant', 'font-medium');
+      }
+    });
+
+    // Reset Diet Pills
+    dietButtons.forEach(b => {
+      if (b.getAttribute('data-filter') === 'all-diet') {
+        b.classList.add('bg-primary-container', 'text-on-primary', 'font-semibold');
+        b.classList.remove('bg-surface-container-lowest', 'border', 'border-outline-variant/40', 'text-on-surface-variant', 'font-medium');
+      } else {
+        b.classList.remove('bg-primary-container', 'text-on-primary', 'font-semibold');
+        b.classList.add('bg-surface-container-lowest', 'border', 'border-outline-variant/40', 'text-on-surface-variant', 'font-medium');
+      }
+    });
+
+    if (sortSelect) sortSelect.value = 'popularite';
+    sortCards();
+    filterCards();
+  }
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', resetAllFilters);
+  }
+</script></main><aside class="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-surface-container-lowest text-primary shadow-[0_8px_30px_rgba(19,93,84,0.12)] border border-secondary-fixed/40 backdrop-blur-md cursor-pointer hover:shadow-lg hover:border-secondary transition-all group"><div class="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container"><span class="material-symbols-outlined text-[16px]">smart_toy</span></div><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-primary font-bold leading-tight">Concierge Culinaire</span><span class="font-label-sm text-label-sm text-secondary leading-tight">Accords Mets &amp; Terroirs d'Algérie</span></div><span class="material-symbols-outlined text-primary-container text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span></aside><footer class="w-full bg-surface-container-low text-on-surface border-t border-outline-variant/30"><div class="max-w-[1320px] mx-auto px-6 py-16"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12"><div class="lg:col-span-2 space-y-4"><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-primary-fixed"><span class="material-symbols-outlined text-[20px]">restaurant</span></div><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight uppercase">La Dentelle</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">L'excellence de la haute gastronomie algérienne réinventée au cœur d'Alger. Produits d'exception du terroir, safran de Tizi Ouzou, huiles d'olive de Kabylie et agneaux confits des hauts plateaux livrés avec un soin méticuleux.</p><div class="pt-2"><p class="font-label-md text-label-md text-secondary uppercase tracking-wider font-bold mb-1.5">Engagement Qualité &amp; Fraîcheur</p><p class="font-body-sm text-body-sm text-on-surface-variant">Circuits courts artisanaux, sélection quotidienne des criées de la baie d'Alger et traçabilité intégrale de nos viandes labellisées.</p></div></div><div><h4 class="font-headline-sm text-headline-sm text-primary mb-4 font-bold text-base">Salons &amp; Horaires</h4><ul class="space-y-2 font-body-md text-body-md text-on-surface-variant"><li>Sidi Yahia (Hydra) · Alger</li><li>Déjeuner : 12h00 – 15h30</li><li>Dîner : 19h00 – 23h30</li><li>Service Continu Vendredi &amp; Samedi</li><li class="pt-2 font-bold text-primary">Salons Privés &amp; Réceptions sur réservation</li></ul></div><div><h4 class="font-headline-sm text-headline-sm text-primary mb-4 font-bold text-base">Zone de Livraison Express</h4><ul class="space-y-2 font-body-md text-body-md text-on-surface-variant"><li>Hydra · El Biar · Sidi Yahia</li><li>Alger Centre · Telemly · El Mouradia</li><li>Ben Aknoun · Val d'Hydra · Dely Ibrahim</li><li>Emballages isothermes haute fidélité thermique</li></ul></div><div class="space-y-4"><h4 class="font-headline-sm text-headline-sm text-primary text-base font-bold">Gazette Gourmande</h4><p class="font-body-md text-body-md text-on-surface-variant">Recevez en avant-première nos créations de saison et nos coffrets dégustation.</p><form class="flex flex-col gap-2.5"><input class="px-3.5 py-2.5 rounded-lg bg-surface-container-lowest text-on-surface placeholder:text-outline border border-outline-variant/40 focus:outline-none focus:border-primary-container font-body-md text-body-md shadow-sm" placeholder="Votre adresse email..." type="email"/><button class="px-4 py-2.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors text-center font-bold shadow-sm" type="button">S'inscrire</button></form></div></div><div class="pt-8 border-t border-outline-variant/20 flex flex-col md:flex-row items-center justify-between gap-4 font-label-md text-label-md text-on-surface-variant"><div>© 2025 La Dentelle Alger. Tous droits réservés. Maison de Haute Gastronomie Algérienne.</div><div class="flex items-center gap-6 font-medium"><a class="hover:text-primary transition-colors" href="#">Charte de Terroir</a><a class="hover:text-primary transition-colors" href="#">Conditions de Commande</a><a class="hover:text-primary transition-colors" href="#">Privatisations</a><a class="hover:text-primary transition-colors" href="#">Contactez-nous</a></div></div></div></footer></body></html>

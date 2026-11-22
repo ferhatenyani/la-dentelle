@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<title>La Dentelle · Gastronomie &amp; Street Food Algérienne</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container": "#e7f0ec",
+            "on-primary-fixed-variant": "#005048",
+            "surface-container-high": "#e1eae6",
+            "on-background": "#151d1b",
+            "outline": "#6f7977",
+            "on-error-container": "#93000a",
+            "surface-container-lowest": "#ffffff",
+            "error-container": "#ffdad6",
+            "inverse-on-surface": "#eaf3ef",
+            "on-primary": "#ffffff",
+            "tertiary": "#6a2700",
+            "on-surface": "#151d1b",
+            "on-tertiary-fixed-variant": "#7b2f00",
+            "on-secondary-container": "#765900",
+            "on-error": "#ffffff",
+            "on-secondary": "#ffffff",
+            "surface-dim": "#d3dcd8",
+            "primary-container": "#135d54",
+            "primary-fixed": "#acefe3",
+            "surface-variant": "#dce4e1",
+            "outline-variant": "#bfc9c5",
+            "inverse-primary": "#90d3c7",
+            "surface-container-low": "#edf6f2",
+            "tertiary-fixed": "#ffdbcc",
+            "inverse-surface": "#2a3230",
+            "background": "#f3fbf8",
+            "secondary-fixed": "#ffdf99",
+            "surface-container-highest": "#dce4e1",
+            "secondary": "#775a00",
+            "tertiary-fixed-dim": "#ffb694",
+            "on-tertiary-fixed": "#351000",
+            "error": "#ba1a1a",
+            "on-primary-fixed": "#00201c",
+            "on-tertiary": "#ffffff",
+            "on-primary-container": "#91d3c8",
+            "on-secondary-fixed-variant": "#5a4300",
+            "primary": "#00443d",
+            "secondary-fixed-dim": "#ecc15a",
+            "tertiary-container": "#8c3a0b",
+            "on-tertiary-container": "#ffb695",
+            "on-surface-variant": "#3f4946",
+            "surface": "#f3fbf8",
+            "on-secondary-fixed": "#251a00",
+            "primary-fixed-dim": "#90d3c7",
+            "secondary-container": "#fed269",
+            "surface-tint": "#23695f",
+            "surface-bright": "#f3fbf8"
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#f7faf8] text-on-surface font-sans antialiased selection:bg-primary-fixed selection:text-primary pb-20 md:pb-10">
+<!-- Streamlined Responsive Header -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-outline-variant/30 shadow-[0_2px_12px_rgba(0,68,61,0.04)]">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
+<!-- Brand Logo -->
+<a class="flex items-center gap-2.5 sm:gap-3 shrink-0 group" href="#">
+<div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-primary flex items-center justify-center text-primary-fixed shadow-md shadow-primary/20 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[22px]">restaurant</span>
+</div>
+<div class="flex flex-col">
+<span class="text-lg sm:text-xl font-extrabold text-primary tracking-tight uppercase leading-none">La Dentelle</span>
+<span class="text-[10px] sm:text-[11px] font-semibold text-secondary uppercase tracking-[0.14em] mt-0.5">Alger · Terroir &amp; Douceurs</span>
+</div>
+</a>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#tous">Tout le Menu</a>
+<a class="hover:text-primary transition-colors flex items-center gap-1.5" href="#sandwiches">
+<span>Sandwiches &amp; Matlouh</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-secondary-container/70 text-on-secondary-container">Nouveau</span>
+</a>
+<a class="hover:text-primary transition-colors" href="#douceurs">Douceurs &amp; Pâtisseries</a>
+<a class="hover:text-primary transition-colors" href="#plats-signatures">Plats Signatures</a>
+<a class="hover:text-primary transition-colors" href="#suivi">Suivi Express</a>
+</nav>
+<!-- Right Header Actions (Commune Selector & Cart) -->
+<div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
+<!-- Commune Selector Dropdown (Mobile-friendly Pill) -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low border border-outline-variant/30 text-xs sm:text-sm font-semibold text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px]">location_on</span>
+<select class="bg-transparent border-0 p-0 text-xs sm:text-sm font-bold text-primary focus:ring-0 cursor-pointer pr-1" id="header-commune">
+<option value="hydra">Hydra (35m)</option>
+<option value="sidi-yahia">Sidi Yahia (30m)</option>
+<option value="el-biar">El Biar (40m)</option>
+<option value="alger-centre">Alger Centre (45m)</option>
+<option value="cheraga">Chéraga (45m)</option>
+</select>
+</div>
+<!-- Cart Button Pill -->
+<button class="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-primary text-white hover:bg-primary-container transition-all shadow-sm active:scale-95" id="cart-button" onclick="triggerCartToast()">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined text-[19px]">shopping_bag</span>
+<span class="absolute -top-1.5 -right-2 w-4 h-4 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-extrabold flex items-center justify-center" id="cart-count">3</span>
+</div>
+<span class="text-xs sm:text-sm font-bold ml-1 hidden xs:inline" id="cart-total">4 800 DA</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Notification Banner Ribbon -->
+<div class="bg-primary-container text-primary-fixed text-xs sm:text-sm font-medium py-2 px-4 text-center flex items-center justify-center gap-2 border-b border-primary/20">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-bold text-[10px] uppercase tracking-wider">Offre Alger</span>
+<span>Livraison offerte dès <strong>3 000 DA</strong> sur Hydra, Sidi Yahia &amp; Alger Centre avec le code <strong class="underline decoration-secondary">DENTELLE</strong></span>
+</div>
+<main class="w-full">
+<!-- Big Auto-Scrolling Hero Carousel -->
+<section class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6">
+<div class="relative w-full rounded-3xl overflow-hidden shadow-xl aspect-[16/10] sm:aspect-[21/9] min-h-[380px] sm:min-h-[440px] bg-primary">
+<!-- Slide 1: Sandwiches Gastronomiques -->
+<div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 z-10 flex items-center" id="slide-0">
+<img alt="Sandwiches artisanaux matlouh agneau confit" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.42]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEFHGSZVTiwIX4szHLIIUmi366n3QmgzQHD-MLitJQR9-2kKzvHlgHwhBO0CuYCnpCU1h2Bh884Nj4bXlsUlN3_xxnwlXulL-P3UqGCzOdXKmClL7hDLnl32sLUO-k_We1S4M6KgcLDH9hY4Vwn65Fgtk77NqffAryzLRIJVqYaZo-vIUw_XhUoY_T3jKB5K-LU0IBNzCGKwT-wLxneuJFJp46IaBIveN0LXGxVrLm"/>
+<div class="relative z-10 p-6 sm:p-12 lg:p-16 max-w-2xl text-white space-y-3 sm:space-y-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-wider shadow-sm">
+<span class="material-symbols-outlined text-[15px]">local_fire_department</span> Nouveau à la Carte
+            </span>
+<h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight sm:leading-none text-white drop-shadow-sm">
+              Les Nouveaux Sandwiches Gastronomiques &amp; Matlouh Artisanal
+            </h1>
+<p class="text-sm sm:text-base text-gray-200 line-clamp-2 sm:line-clamp-3 font-normal max-w-xl">
+              Le pain matlouh moelleux cuit sur pierre, farci d'agneau confit 7h, de sauces chermoula parfumées ou de poulet fermier braisé au hmiss grillé.
+            </p>
+<div class="pt-2 flex flex-wrap gap-3">
+<a class="px-5 sm:px-6 py-3 rounded-xl bg-secondary-container text-on-secondary-container font-bold text-sm sm:text-base hover:bg-secondary-fixed transition-transform active:scale-95 shadow-md flex items-center gap-2" href="#sandwiches">
+<span>Commander un Sandwich</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="px-5 sm:px-6 py-3 rounded-xl bg-white/20 hover:bg-white/30 backdrop-blur-md text-white font-semibold text-sm sm:text-base transition-colors" href="#carte">
+                Explorer Tout le Menu
+              </a>
+</div>
+</div>
+</div>
+<!-- Slide 2: Haute Pâtisserie & Douceurs Algéroises -->
+<div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 flex items-center" id="slide-1">
+<img alt="Haute pâtisserie algéroise Makrout el louz dziriette" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.4]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnmAQB0F93TfMXKEporTDl_w6mM7Yx7NG7VO5LPFq5d2wGIbaOJp7HZSex2Kb01TlAZQl2y_zdd7bglVo5SRVcrll5VBRjDgsxVwWZFwbLEgDAOYhgl63TN5hFSL1CRP1XwmXXJpGTMikM6xTQ0nMeVZjYqAlRpf7jMb0TBxxF8A3HdEnZeyONiFM3rgmkBzJF158W5sBCp_mLmw9xfjvgzRQ88R4ngHWAeRsXI3XP"/>
+<div class="relative z-10 p-6 sm:p-12 lg:p-16 max-w-2xl text-white space-y-3 sm:space-y-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-xs font-bold uppercase tracking-wider shadow-sm">
+<span class="material-symbols-outlined text-[15px]">diamond</span> Terroir d'Alger &amp; Casbah
+            </span>
+<h2 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight sm:leading-none text-white drop-shadow-sm">
+              Haute Pâtisserie &amp; Douceurs Algéroises
+            </h2>
+<p class="text-sm sm:text-base text-gray-200 line-clamp-2 sm:line-clamp-3 font-normal max-w-xl">
+              Coffrets dégustation Makrout El Louz velouté au citron, Dziriettes dentelées, Cornes de Gazelle et Samsa croustillante au miel d'oranger.
+            </p>
+<div class="pt-2 flex flex-wrap gap-3">
+<a class="px-5 sm:px-6 py-3 rounded-xl bg-primary-fixed text-on-primary-fixed font-bold text-sm sm:text-base hover:bg-white transition-transform active:scale-95 shadow-md flex items-center gap-2" href="#douceurs">
+<span>Découvrir les Douceurs</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<span class="inline-flex items-center text-xs sm:text-sm font-semibold text-secondary-fixed">
+<span class="material-symbols-outlined text-[18px] mr-1">card_giftcard</span> Emballages cadeaux précieux
+              </span>
+</div>
+</div>
+</div>
+<!-- Slide 3: Livraison Isotherme & Grands Terroirs -->
+<div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 flex items-center" id="slide-2">
+<img alt="Rechta algeroise et plats cuisinés de fête" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.4]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_TnWx_5wz9-k_Nxlm5Aamaomdaci9LrN9H-y4d2yV0jHtAnzxVnmihNRi56CV7xeCB248uii0cijYMDSO5L5MmSlyAdassRUuUJoWHCzvUMfpH7rVxHVzXRzERZVJFTknrs6HGXLQOqwhPZXl2tUtWSgxprrX6mWxbR4yj5iBdm_26r8S5Ut4SW-1sZallvHpf19lmLO1ABhvzc8mISkbHeTO59lVMEhEu33dRTJ8"/>
+<div class="relative z-10 p-6 sm:p-12 lg:p-16 max-w-2xl text-white space-y-3 sm:space-y-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider shadow-sm">
+<span class="material-symbols-outlined text-[15px]">electric_moped</span> 35 Min Chrono
+            </span>
+<h2 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight sm:leading-none text-white drop-shadow-sm">
+              Livraison Express Chaude &amp; Isotherme sur Tout Alger
+            </h2>
+<p class="text-sm sm:text-base text-gray-200 line-clamp-2 sm:line-clamp-3 font-normal max-w-xl">
+              Vos plats emblématiques (Rechta impériale, Couscous Constantinois, Tajines) scellés sous cloche thermique à 65°C pour une dégustation restaurant à domicile.
+            </p>
+<div class="pt-2 flex flex-wrap gap-3">
+<a class="px-5 sm:px-6 py-3 rounded-xl bg-white text-primary font-bold text-sm sm:text-base hover:bg-surface-container transition-transform active:scale-95 shadow-md flex items-center gap-2" href="#plats-signatures">
+<span>Voir les Plats Signatures</span>
+<span class="material-symbols-outlined text-[18px]">restaurant_menu</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Carousel Navigation Controls -->
+<button aria-label="Slide précédent" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/30 hover:bg-black/50 text-white backdrop-blur-md flex items-center justify-center transition-colors" onclick="prevSlide()">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button aria-label="Slide suivant" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/30 hover:bg-black/50 text-white backdrop-blur-md flex items-center justify-center transition-colors" onclick="nextSlide()">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+<!-- Carousel Dots Indicator -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+<button aria-label="Aller au slide 1" class="w-8 h-2 rounded-full bg-secondary-container transition-all" id="dot-0" onclick="goToSlide(0)"></button>
+<button aria-label="Aller au slide 2" class="w-2.5 h-2 rounded-full bg-white/50 hover:bg-white transition-all" id="dot-1" onclick="goToSlide(1)"></button>
+<button aria-label="Aller au slide 3" class="w-2.5 h-2 rounded-full bg-white/50 hover:bg-white transition-all" id="dot-2" onclick="goToSlide(2)"></button>
+</div>
+</div>
+</section>
+<!-- Category Filter Bar (Clean Sticky Pills) -->
+<div class="sticky top-16 sm:top-20 z-40 bg-white/95 backdrop-blur-md border-b border-outline-variant/30 py-3 mt-4" id="carte">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
+<a class="category-btn active px-4 py-2 rounded-full bg-primary text-white text-xs sm:text-sm font-bold whitespace-nowrap shadow-sm" href="#tous">
+            Tous les Produits
+          </a>
+<a class="category-btn px-4 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:text-primary hover:bg-surface-container text-xs sm:text-sm font-semibold whitespace-nowrap flex items-center gap-1.5 transition-colors" href="#sandwiches">
+<span class="material-symbols-outlined text-[17px]">lunch_dining</span>
+<span>Sandwiches &amp; Matlouh</span>
+</a>
+<a class="category-btn px-4 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:text-primary hover:bg-surface-container text-xs sm:text-sm font-semibold whitespace-nowrap flex items-center gap-1.5 transition-colors" href="#douceurs">
+<span class="material-symbols-outlined text-[17px]">bakery_dining</span>
+<span>Pâtisseries &amp; Douceurs</span>
+</a>
+<a class="category-btn px-4 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:text-primary hover:bg-surface-container text-xs sm:text-sm font-semibold whitespace-nowrap flex items-center gap-1.5 transition-colors" href="#plats-signatures">
+<span class="material-symbols-outlined text-[17px]">soup_kitchen</span>
+<span>Plats de Terroir</span>
+</a>
+<a class="category-btn px-4 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:text-primary hover:bg-surface-container text-xs sm:text-sm font-semibold whitespace-nowrap flex items-center gap-1.5 transition-colors" href="#boissons">
+<span class="material-symbols-outlined text-[17px]">local_cafe</span>
+<span>Cherbet &amp; Boissons</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16" id="tous">
+<!-- SECTION 1: Sandwiches Gastronomiques & Street Food du Terroir -->
+<section class="space-y-6 pt-4" id="sandwiches">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-extrabold uppercase tracking-wider">Street Food Haute Couture</span>
+<span class="text-xs text-primary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">timer</span> Prêt en 12–15 min
+              </span>
+</div>
+<h2 class="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight mt-1.5">
+              Sandwiches Gastronomiques &amp; Pain Matlouh Artisanal
+            </h2>
+<p class="text-sm text-on-surface-variant mt-1">
+              Pains traditionnels pétris chaque matin et garnis de viandes tendres effilochées, marinades aux épices nobles et sauces signature.
+            </p>
+</div>
+<span class="text-xs font-semibold text-secondary-fixed-variant self-start sm:self-end">4 créations du chef</span>
+</div>
+<!-- 4-Card Responsive Grid for Sandwiches -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+<!-- Sandwich 1: Matlouh Agneau Confit -->
+<div class="group bg-white rounded-2xl p-3 border border-outline-variant/30 hover:border-primary/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+<img alt="Sandwich Matlouh Agneau confit 7h" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEFHGSZVTiwIX4szHLIIUmi366n3QmgzQHD-MLitJQR9-2kKzvHlgHwhBO0CuYCnpCU1h2Bh884Nj4bXlsUlN3_xxnwlXulL-P3UqGCzOdXKmClL7hDLnl32sLUO-k_We1S4M6KgcLDH9hY4Vwn65Fgtk77NqffAryzLRIJVqYaZo-vIUw_XhUoY_T3jKB5K-LU0IBNzCGKwT-wLxneuJFJp46IaBIveN0LXGxVrLm"/>
+<span class="absolute top-2.5 left-2.5 bg-primary/90 text-white backdrop-blur text-[11px] font-bold px-2 py-0.5 rounded-md">Signature</span>
+<span class="absolute bottom-2.5 right-2.5 bg-black/60 text-white backdrop-blur text-[11px] font-semibold px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary-fixed">schedule</span> 15 min
+                </span>
+</div>
+<div class="pt-3">
+<div class="flex items-center justify-between text-xs text-on-surface-variant font-medium mb-1">
+<span>Pain Matlouh au levain</span>
+<span class="text-secondary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">star</span> 4.9
+                  </span>
+</div>
+<h3 class="text-base font-bold text-primary leading-snug group-hover:text-primary-container">
+                  Matlouh Épaule d'Agneau Confite 7h
+                </h3>
+<p class="text-xs text-on-surface-variant line-clamp-2 mt-1.5 leading-relaxed">
+                  Effiloché d’agneau fondant cuit au feu doux, compotée d'oignons caramélisés et réduction de chermoula douce maison.
+                </p>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between mt-auto">
+<span class="text-lg font-extrabold text-primary">1 100 DA</span>
+<button class="px-3.5 py-2 rounded-xl bg-primary text-white hover:bg-primary-container active:scale-95 text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm" onclick="addToCart('Matlouh Agneau Confit', 1100)">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>Ajouter</span>
+</button>
+</div>
+</div>
+<!-- Sandwich 2: Poulet Fermier & Hmiss -->
+<div class="group bg-white rounded-2xl p-3 border border-outline-variant/30 hover:border-primary/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+<img alt="Matlouh Suprême Poulet Fermier &amp; Hmiss" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_TnWx_5wz9-k_Nxlm5Aamaomdaci9LrN9H-y4d2yV0jHtAnzxVnmihNRi56CV7xeCB248uii0cijYMDSO5L5MmSlyAdassRUuUJoWHCzvUMfpH7rVxHVzXRzERZVJFTknrs6HGXLQOqwhPZXl2tUtWSgxprrX6mWxbR4yj5iBdm_26r8S5Ut4SW-1sZallvHpf19lmLO1ABhvzc8mISkbHeTO59lVMEhEu33dRTJ8"/>
+<span class="absolute top-2.5 left-2.5 bg-secondary-container text-on-secondary-container text-[11px] font-bold px-2 py-0.5 rounded-md">Best-Seller</span>
+<span class="absolute bottom-2.5 right-2.5 bg-black/60 text-white backdrop-blur text-[11px] font-semibold px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary-fixed">schedule</span> 12 min
+                </span>
+</div>
+<div class="pt-3">
+<div class="flex items-center justify-between text-xs text-on-surface-variant font-medium mb-1">
+<span>Pain Matlouh moelleux</span>
+<span class="text-secondary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">star</span> 4.8
+                  </span>
+</div>
+<h3 class="text-base font-bold text-primary leading-snug group-hover:text-primary-container">
+                  Matlouh Suprême Poulet &amp; Hmiss
+                </h3>
+<p class="text-xs text-on-surface-variant line-clamp-2 mt-1.5 leading-relaxed">
+                  Blancs de poulet mariné au safran, poivrons braisés grillés à l'huile d'olive de Kabylie, fromage fondant crémeux.
+                </p>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between mt-auto">
+<span class="text-lg font-extrabold text-primary">850 DA</span>
+<button class="px-3.5 py-2 rounded-xl bg-primary text-white hover:bg-primary-container active:scale-95 text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm" onclick="addToCart('Matlouh Poulet &amp; Hmiss', 850)">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>Ajouter</span>
+</button>
+</div>
+</div>
+<!-- Sandwich 3: Merguez d'Oran & Kesra -->
+<div class="group bg-white rounded-2xl p-3 border border-outline-variant/30 hover:border-primary/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+<img alt="Sandwich Merguez Artisanales d'Oran" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUNgfXLclF8B04XzvVqShNXniJuRWqlgsQ3USSM-dOC58UYIIg6sKrn94r9okRlkMtBipjA8JKCjpdMAJi9Ir8vpQsZbeozwUs1alITga6TVBDDeGyAZ-OJ9UVh8PjTNBZv7Y7HLkivtmog1nfqD_G4VhFrT8UKbw7ahrD-8VKGT2awQdiTej-sr9pyoCY4CyGY7tj5Z1Tsk8dfdGOCMA0-O0KNM9UNEWe75NADS42"/>
+<span class="absolute top-2.5 left-2.5 bg-surface-container-low text-primary text-[11px] font-bold px-2 py-0.5 rounded-md">Tradition Oran</span>
+<span class="absolute bottom-2.5 right-2.5 bg-black/60 text-white backdrop-blur text-[11px] font-semibold px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary-fixed">schedule</span> 10 min
+                </span>
+</div>
+<div class="pt-3">
+<div class="flex items-center justify-between text-xs text-on-surface-variant font-medium mb-1">
+<span>Galette Kesra fine</span>
+<span class="text-secondary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">star</span> 4.7
+                  </span>
+</div>
+<h3 class="text-base font-bold text-primary leading-snug group-hover:text-primary-container">
+                  Merguez d'Oran &amp; Frites Maison
+                </h3>
+<p class="text-xs text-on-surface-variant line-clamp-2 mt-1.5 leading-relaxed">
+                  Véritables merguez de bœuf et agneau pilées au mortier, frites fraîches dorées et harissa douce à l'ail confit.
+                </p>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between mt-auto">
+<span class="text-lg font-extrabold text-primary">750 DA</span>
+<button class="px-3.5 py-2 rounded-xl bg-primary text-white hover:bg-primary-container active:scale-95 text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm" onclick="addToCart('Sandwich Merguez d\'Oran', 750)">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>Ajouter</span>
+</button>
+</div>
+</div>
+<!-- Sandwich 4: Pain Brioché Kebda Mchermla -->
+<div class="group bg-white rounded-2xl p-3 border border-outline-variant/30 hover:border-primary/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+<img alt="Pain Brioché Kebda Mchermla Alger" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBRLpH5BBSAiPPhTmU7o2bw8nkYGCpvhwlaZfed8Z-HJ3f5xu5qtPvAllFjalHUTxixwLhsLcvclgthPPO3SIo_CBCTmvt0Bwy0ARRZK4V84DyXfQUBkqZ8l7vSUnlAyn5isY3_jtZnVcKh9FyG181CbD3R2zq3nqDPEHx-DkQRbeyMGZv5tie_TjiYDX_HjB9Xcqr7QG_sYFV-0EhXkwcnPR-m822grLTirImLlxG"/>
+<span class="absolute top-2.5 left-2.5 bg-primary text-white text-[11px] font-bold px-2 py-0.5 rounded-md">Spécialité Alger</span>
+<span class="absolute bottom-2.5 right-2.5 bg-black/60 text-white backdrop-blur text-[11px] font-semibold px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary-fixed">schedule</span> 15 min
+                </span>
+</div>
+<div class="pt-3">
+<div class="flex items-center justify-between text-xs text-on-surface-variant font-medium mb-1">
+<span>Pain brioché tiède</span>
+<span class="text-secondary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">star</span> 4.9
+                  </span>
+</div>
+<h3 class="text-base font-bold text-primary leading-snug group-hover:text-primary-container">
+                  Brioché Kebda Mchermla
+                </h3>
+<p class="text-xs text-on-surface-variant line-clamp-2 mt-1.5 leading-relaxed">
+                  Foie de veau saisi à la minute, sauce dersa algéroise au cumin et piment doux, persil plat et citron frais.
+                </p>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between mt-auto">
+<span class="text-lg font-extrabold text-primary">950 DA</span>
+<button class="px-3.5 py-2 rounded-xl bg-primary text-white hover:bg-primary-container active:scale-95 text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm" onclick="addToCart('Brioché Kebda Mchermla', 950)">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>Ajouter</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Pâtisseries & Douceurs de la Casbah (Sweets) -->
+<section class="space-y-6 pt-4" id="douceurs">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-extrabold uppercase tracking-wider">Atelier Sucre &amp; Miel Pur</span>
+<span class="text-xs text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">eco</span> Amandes de Blida
+              </span>
+</div>
+<h2 class="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight mt-1.5">
+              Pâtisseries &amp; Douceurs de la Casbah
+            </h2>
+<p class="text-sm text-on-surface-variant mt-1">
+              Les joyaux sucrés du patrimoine algérois façonnés à la main, nappés de miel sauvage et parfumés à la fleur d'oranger distillée.
+            </p>
+</div>
+<a class="text-xs font-bold text-primary hover:underline flex items-center gap-1 self-start sm:self-end" href="#">
+            Voir tous les coffrets cadeaux <span class="material-symbols-outlined text-[15px]">chevron_right</span>
+</a>
+</div>
+<!-- 4-Card Responsive Grid for Sweets -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+<!-- Douceur 1: Coffret Prestige Makrout El Louz -->
+<div class="group bg-white rounded-2xl p-3 border border-outline-variant/30 hover:border-primary/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+<img alt="Coffret Prestige Makrout El Louz et Dziriettes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnmAQB0F93TfMXKEporTDl_w6mM7Yx7NG7VO5LPFq5d2wGIbaOJp7HZSex2Kb01TlAZQl2y_zdd7bglVo5SRVcrll5VBRjDgsxVwWZFwbLEgDAOYhgl63TN5hFSL1CRP1XwmXXJpGTMikM6xTQ0nMeVZjYqAlRpf7jMb0TBxxF8A3HdEnZeyONiFM3rgmkBzJF158W5sBCp_mLmw9xfjvgzRQ88R4ngHWAeRsXI3XP"/>
+<span class="absolute top-2.5 left-2.5 bg-secondary-container text-on-secondary-container text-[11px] font-bold px-2 py-0.5 rounded-md">6 Pièces</span>
+<button aria-label="Favoris" class="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-white/80 backdrop-blur text-on-surface hover:text-red-500 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="pt-3">
+<span class="text-xs text-secondary font-bold uppercase tracking-wider">Maison d'Alger</span>
+<h3 class="text-base font-bold text-primary leading-snug group-hover:text-primary-container mt-0.5">
+                  Makrout El Louz &amp; Dziriettes
+                </h3>
+<p class="text-xs text-on-surface-variant line-clamp-2 mt-1.5 leading-relaxed">
+                  Cœur amande fondante au zeste de citron vert glacé au sucre fin, et Dziriettes travaillées en dentelle d'or.
+                </p>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between mt-auto">
+<div>
+<span class="text-xs text-on-surface-variant block">Coffret</span>
+<span class="text-lg font-extrabold text-primary">1 600 DA</span>
+</div>
+<button class="px-3.5 py-2 rounded-xl bg-primary text-white hover:bg-primary-container active:scale-95 text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm" onclick="addToCart('Coffret Makrout El Louz', 1600)">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>Ajouter</span>
+</button>
+</div>
+</div>
+<!-- Douceur 2: Cornes de Gazelle & Samsa -->
+<div class="group bg-white rounded-2xl p-3 border border-outline-variant/30 hover:border-primary/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+<img alt="Cornes de Gazelle et Samsa croustillante" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_i-tNUHXfLA1itaz0BOxWJMFs3CcjLBXeQrq9VY0PWhYQDxHjA3DypPHyPui9XHOOdETz1RttmRSQmKgW72By49spkJcPQKE7ju7drdKcEZQFNAgtu0A2nlH5iJuqyNMe4d1fjdcyaDYMtoNf2xd5YSBl_Rq-BikmJ2GKgxHAeDC1zSxxWhp9xRKeyG1bUczdBI2SFB7h9dcb5NuHDl57UNtfPc4BPQwKOIBEUYuW"/>
+<span class="absolute top-2.5 left-2.5 bg-primary/90 text-white backdrop-blur text-[11px] font-bold px-2 py-0.5 rounded-md">Miel Pur</span>
+<button aria-label="Favoris" class="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-white/80 backdrop-blur text-on-surface hover:text-red-500 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="pt-3">
+<span class="text-xs text-secondary font-bold uppercase tracking-wider">Feuilletage Maison</span>
+<h3 class="text-base font-bold text-primary leading-snug group-hover:text-primary-container mt-0.5">
+                  Tcharek &amp; Samsa au Miel
+                </h3>
+<p class="text-xs text-on-surface-variant line-clamp-2 mt-1.5 leading-relaxed">
+                  Cornes de gazelle sablées à la fleur d'oranger et triangles croustillants de Samsa dorée aux amandes torréfiées.
+                </p>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between mt-auto">
+<div>
+<span class="text-xs text-on-surface-variant block">Assortiment</span>
+<span class="text-lg font-extrabold text-primary">1 400 DA</span>
+</div>
+<button class="px-3.5 py-2 rounded-xl bg-primary text-white hover:bg-primary-container active:scale-95 text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm" onclick="addToCart('Tcharek &amp; Samsa', 1400)">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>Ajouter</span>
+</button>
+</div>
+</div>
+<!-- Douceur 3: M'halbi traditionnel -->
+<div class="group bg-white rounded-2xl p-3 border border-outline-variant/30 hover:border-primary/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+<img alt="M'halbi traditionnel à la fleur d'oranger" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYFe41WvDyM2lgoqFKd_LiwWpDJ5JYHyMTMxQhRN9ErEEhn61FZlxGK5qnvDB4eihuJH5A5L4BbR-ly9Cp1xD5LrMAwQEOfQO2rt5Llk2MesJfugKBxVIJQASfZtMMrPbk-hIqRa-Rbr2aS0kOcPVQry8MDxbBOBnigAtcz6EmEW7cGb9QPYV2sqiXlAk5Heet9wSODfhcq4XoixUv0apWm-3du4TnnvH11P6CwH8v"/>
+<span class="absolute top-2.5 left-2.5 bg-surface-container-low text-primary text-[11px] font-bold px-2 py-0.5 rounded-md">Fraîcheur</span>
+</div>
+<div class="pt-3">
+<span class="text-xs text-secondary font-bold uppercase tracking-wider">Dessert Crème</span>
+<h3 class="text-base font-bold text-primary leading-snug group-hover:text-primary-container mt-0.5">
+                  M'halbi à la Fleur d'Oranger
+                </h3>
+<p class="text-xs text-on-surface-variant line-clamp-2 mt-1.5 leading-relaxed">
+                  Crème onctueuse de riz parfumée à l'eau de fleur d'oranger pure et dessin de cannelle fine de Ceylan.
+                </p>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between mt-auto">
+<div>
+<span class="text-xs text-on-surface-variant block">1 Coupe</span>
+<span class="text-lg font-extrabold text-primary">450 DA</span>
+</div>
+<button class="px-3.5 py-2 rounded-xl bg-primary text-white hover:bg-primary-container active:scale-95 text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm" onclick="addToCart('M\'halbi tradition', 450)">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>Ajouter</span>
+</button>
+</div>
+</div>
+<!-- Douceur 4: Brioche Mona Algéroise -->
+<div class="group bg-white rounded-2xl p-3 border border-outline-variant/30 hover:border-primary/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+<img alt="Brioche Mona Algéroise au sucre perlé" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWLQrHPev7dMefUaV0ert996sDFLWigs3gCIgTq8eZtwrScC8qWOTn7lcShgdalN4R_FMHz4yLc-JfhlbClaZjC6pmcsmF3xgFf6fJKwri_kJ_c6c69Se1dqoVNDphm4LFduHVzyMggozcoKjoNMC0gmsAU6vRdugb-yF_sK4eW-9qUA4TtR99_XTXlS5qONKzhhMsmY_EMN_ZraZdP9Msetlw1oRqy2e--YXq_ykT"/>
+<span class="absolute top-2.5 left-2.5 bg-secondary-container text-on-secondary-container text-[11px] font-bold px-2 py-0.5 rounded-md">Goûter d'Alger</span>
+</div>
+<div class="pt-3">
+<span class="text-xs text-secondary font-bold uppercase tracking-wider">Boulangerie Fine</span>
+<h3 class="text-base font-bold text-primary leading-snug group-hover:text-primary-container mt-0.5">
+                  Brioche Mona au Sucre Perlé
+                </h3>
+<p class="text-xs text-on-surface-variant line-clamp-2 mt-1.5 leading-relaxed">
+                  Mouna moelleuse traditionnelle dorée au four, parfumée au zeste d'agrumes de la Mitidja et anis vert.
+                </p>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between mt-auto">
+<div>
+<span class="text-xs text-on-surface-variant block">Individuelle</span>
+<span class="text-lg font-extrabold text-primary">500 DA</span>
+</div>
+<button class="px-3.5 py-2 rounded-xl bg-primary text-white hover:bg-primary-container active:scale-95 text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm" onclick="addToCart('Brioche Mona', 500)">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>Ajouter</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: Grands Plats & Signatures du Terroir -->
+<section class="space-y-6 pt-4" id="plats-signatures">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-primary text-white text-xs font-extrabold uppercase tracking-wider">Haute Cuisine d'Apparat</span>
+<span class="text-xs text-on-surface-variant font-semibold">Emballage isotherme scellé 65°C</span>
+</div>
+<h2 class="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight mt-1.5">
+              Grands Plats de Terroir &amp; Spécialités d'Honneur
+            </h2>
+<p class="text-sm text-on-surface-variant mt-1">
+              Les grands classiques séculaires de notre gastronomie mijotés par nos maîtres-queux, prêts à servir sur vos tables.
+            </p>
+</div>
+<span class="text-xs font-semibold text-secondary-fixed-variant self-start sm:self-end">Portions copieuses 1 à 2 pers.</span>
+</div>
+<!-- 4-Card Responsive Grid for Main Dishes -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+<!-- Plat 1: Rechta Algéroise Impériale -->
+<div class="group bg-white rounded-2xl p-3 border border-outline-variant/30 hover:border-primary/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+<img alt="Rechta Algéroise Impériale aux Navets Glacés" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_TnWx_5wz9-k_Nxlm5Aamaomdaci9LrN9H-y4d2yV0jHtAnzxVnmihNRi56CV7xeCB248uii0cijYMDSO5L5MmSlyAdassRUuUJoWHCzvUMfpH7rVxHVzXRzERZVJFTknrs6HGXLQOqwhPZXl2tUtWSgxprrX6mWxbR4yj5iBdm_26r8S5Ut4SW-1sZallvHpf19lmLO1ABhvzc8mISkbHeTO59lVMEhEu33dRTJ8"/>
+<span class="absolute top-2.5 left-2.5 bg-secondary-container text-on-secondary-container text-[11px] font-bold px-2 py-0.5 rounded-md">Plat Mythique</span>
+</div>
+<div class="pt-3">
+<div class="flex items-center justify-between text-xs text-on-surface-variant font-medium mb-1">
+<span>Pâtes fraîches main</span>
+<span class="text-secondary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">star</span> 4.98
+                  </span>
+</div>
+<h3 class="text-base font-bold text-primary leading-snug group-hover:text-primary-container">
+                  Rechta Impériale aux Navets Glacés
+                </h3>
+<p class="text-xs text-on-surface-variant line-clamp-2 mt-1.5 leading-relaxed">
+                  Pâtes filées main, navets fondants au beurre fermier, poulet rôti doré et bouillon cannelle safrané.
+                </p>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between mt-auto">
+<span class="text-lg font-extrabold text-primary">2 600 DA</span>
+<button class="px-3.5 py-2 rounded-xl bg-primary text-white hover:bg-primary-container active:scale-95 text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm" onclick="addToCart('Rechta Impériale', 2600)">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>Ajouter</span>
+</button>
+</div>
+</div>
+<!-- Plat 2: Couscous Royal Constantinois -->
+<div class="group bg-white rounded-2xl p-3 border border-outline-variant/30 hover:border-primary/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+<img alt="Couscous Royal Constantinois" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUNgfXLclF8B04XzvVqShNXniJuRWqlgsQ3USSM-dOC58UYIIg6sKrn94r9okRlkMtBipjA8JKCjpdMAJi9Ir8vpQsZbeozwUs1alITga6TVBDDeGyAZ-OJ9UVh8PjTNBZv7Y7HLkivtmog1nfqD_G4VhFrT8UKbw7ahrD-8VKGT2awQdiTej-sr9pyoCY4CyGY7tj5Z1Tsk8dfdGOCMA0-O0KNM9UNEWe75NADS42"/>
+<span class="absolute top-2.5 left-2.5 bg-primary text-white text-[11px] font-bold px-2 py-0.5 rounded-md">Incontournable</span>
+</div>
+<div class="pt-3">
+<div class="flex items-center justify-between text-xs text-on-surface-variant font-medium mb-1">
+<span>Souris d'agneau &amp; légumes</span>
+<span class="text-secondary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">star</span> 4.95
+                  </span>
+</div>
+<h3 class="text-base font-bold text-primary leading-snug group-hover:text-primary-container">
+                  Couscous Royal Constantinois
+                </h3>
+<p class="text-xs text-on-surface-variant line-clamp-2 mt-1.5 leading-relaxed">
+                  Semoule extra fine roulée au smen, souris d'agneau mijotée fondante, courgettes douces et bouillon doré.
+                </p>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between mt-auto">
+<span class="text-lg font-extrabold text-primary">3 400 DA</span>
+<button class="px-3.5 py-2 rounded-xl bg-primary text-white hover:bg-primary-container active:scale-95 text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm" onclick="addToCart('Couscous Royal Constantinois', 3400)">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>Ajouter</span>
+</button>
+</div>
+</div>
+<!-- Plat 3: Tajine Lham Lahlou -->
+<div class="group bg-white rounded-2xl p-3 border border-outline-variant/30 hover:border-primary/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+<img alt="Tajine Lham Lahlou aux Fruits Dorés" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBRLpH5BBSAiPPhTmU7o2bw8nkYGCpvhwlaZfed8Z-HJ3f5xu5qtPvAllFjalHUTxixwLhsLcvclgthPPO3SIo_CBCTmvt0Bwy0ARRZK4V84DyXfQUBkqZ8l7vSUnlAyn5isY3_jtZnVcKh9FyG181CbD3R2zq3nqDPEHx-DkQRbeyMGZv5tie_TjiYDX_HjB9Xcqr7QG_sYFV-0EhXkwcnPR-m822grLTirImLlxG"/>
+<span class="absolute top-2.5 left-2.5 bg-secondary-container text-on-secondary-container text-[11px] font-bold px-2 py-0.5 rounded-md">Fête Algéroise</span>
+</div>
+<div class="pt-3">
+<div class="flex items-center justify-between text-xs text-on-surface-variant font-medium mb-1">
+<span>Sucré-Salé noble</span>
+<span class="text-secondary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">star</span> 4.90
+                  </span>
+</div>
+<h3 class="text-base font-bold text-primary leading-snug group-hover:text-primary-container">
+                  Tajine Lham Lahlou aux Fruits Dorés
+                </h3>
+<p class="text-xs text-on-surface-variant line-clamp-2 mt-1.5 leading-relaxed">
+                  Morceaux tendres d'agneau confits aux pruneaux, abricots secs, amandes effilées et sirop de cannelle.
+                </p>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between mt-auto">
+<span class="text-lg font-extrabold text-primary">2 800 DA</span>
+<button class="px-3.5 py-2 rounded-xl bg-primary text-white hover:bg-primary-container active:scale-95 text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm" onclick="addToCart('Tajine Lham Lahlou', 2800)">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>Ajouter</span>
+</button>
+</div>
+</div>
+<!-- Plat 4: Chorba Frik & Boureks Royaux -->
+<div class="group bg-white rounded-2xl p-3 border border-outline-variant/30 hover:border-primary/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+<img alt="Chorba Frik au Blé Vert &amp; Boureks" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYFe41WvDyM2lgoqFKd_LiwWpDJ5JYHyMTMxQhRN9ErEEhn61FZlxGK5qnvDB4eihuJH5A5L4BbR-ly9Cp1xD5LrMAwQEOfQO2rt5Llk2MesJfugKBxVIJQASfZtMMrPbk-hIqRa-Rbr2aS0kOcPVQry8MDxbBOBnigAtcz6EmEW7cGb9QPYV2sqiXlAk5Heet9wSODfhcq4XoixUv0apWm-3du4TnnvH11P6CwH8v"/>
+<span class="absolute top-2.5 left-2.5 bg-surface-container-low text-primary text-[11px] font-bold px-2 py-0.5 rounded-md">Duo Salons</span>
+</div>
+<div class="pt-3">
+<div class="flex items-center justify-between text-xs text-on-surface-variant font-medium mb-1">
+<span>Blé vert des Aurès</span>
+<span class="text-secondary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">star</span> 4.88
+                  </span>
+</div>
+<h3 class="text-base font-bold text-primary leading-snug group-hover:text-primary-container">
+                  Chorba Frik &amp; Boureks Dorés
+                </h3>
+<p class="text-xs text-on-surface-variant line-clamp-2 mt-1.5 leading-relaxed">
+                  Soupe traditionnelle au frik concassé et agneau, accompagnée de 2 boureks croustillants au bœuf et persil.
+                </p>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between mt-auto">
+<span class="text-lg font-extrabold text-primary">1 400 DA</span>
+<button class="px-3.5 py-2 rounded-xl bg-primary text-white hover:bg-primary-container active:scale-95 text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm" onclick="addToCart('Chorba Frik &amp; Boureks', 1400)">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>Ajouter</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: Boissons Artisanales & Cherbet -->
+<section class="bg-surface-container-low rounded-3xl p-6 sm:p-8 border border-outline-variant/30" id="boissons">
+<div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+<div class="space-y-2 text-center sm:text-left">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-extrabold uppercase">Rafraîchissements du Terroir</span>
+<h3 class="text-xl sm:text-2xl font-extrabold text-primary">Cherbet de Boufarik &amp; Thés aux Herbes</h3>
+<p class="text-sm text-on-surface-variant max-w-xl">
+              Citronnade traditionnelle aux zestes pressés et eau de fleur d'oranger fraîche, ou thé à la menthe douce de Timimoun préparé à la commande.
+            </p>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<button class="px-4 py-2.5 rounded-xl bg-white border border-outline-variant/40 hover:border-primary text-primary font-bold text-xs sm:text-sm flex items-center gap-2 shadow-sm transition-all" onclick="addToCart('Cherbet Boufarik 1L', 400)">
+<span class="material-symbols-outlined text-[18px]">local_drink</span>
+<span>Cherbet Citron 1L (400 DA)</span>
+</button>
+<button class="px-4 py-2.5 rounded-xl bg-primary text-white hover:bg-primary-container font-bold text-xs sm:text-sm flex items-center gap-2 shadow-sm transition-all" onclick="addToCart('Thé à la menthe', 250)">
+<span class="material-symbols-outlined text-[18px]">emoji_food_beverage</span>
+<span>Thé Menthe (250 DA)</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Express Zone Check & Delivery Bar -->
+<section class="rounded-3xl bg-primary text-white p-6 sm:p-10 shadow-lg relative overflow-hidden" id="suivi">
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-7 space-y-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container text-primary-fixed text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[15px]">moped</span> Coursiers Dédiés
+            </span>
+<h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Estimez votre heure de dégustation à Alger</h3>
+<p class="text-sm text-gray-200">
+              Nos livreurs équipés de caissons thermiques intelligents livrent directement à votre porte à Hydra, Sidi Yahia, El Biar, Telemly et environs.
+            </p>
+</div>
+<div class="lg:col-span-5 flex flex-col sm:flex-row items-stretch gap-2.5">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-[18px]">pin_drop</span>
+<input class="w-full pl-10 pr-3 py-3 rounded-xl bg-white text-on-surface text-sm border-0 focus:ring-2 focus:ring-secondary placeholder:text-gray-400" placeholder="Entrez votre quartier ou adresse..." type="text"/>
+</div>
+<button class="px-5 py-3 rounded-xl bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed text-sm font-bold shadow-md transition-all whitespace-nowrap">
+              Vérifier
+            </button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Mobile Bottom Action Bar (Fixed on mobile screens) -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-outline-variant/30 px-4 py-2.5 flex items-center justify-between sm:hidden shadow-lg">
+<a class="flex flex-col items-center text-primary text-xs font-bold" href="#carte">
+<span class="material-symbols-outlined text-[20px]">restaurant_menu</span>
+<span>Menu</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant hover:text-primary text-xs font-medium" href="#sandwiches">
+<span class="material-symbols-outlined text-[20px]">lunch_dining</span>
+<span>Sandwiches</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant hover:text-primary text-xs font-medium" href="#douceurs">
+<span class="material-symbols-outlined text-[20px]">bakery_dining</span>
+<span>Douceurs</span>
+</a>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary text-white text-xs font-bold shadow-sm" onclick="triggerCartToast()">
+<span class="material-symbols-outlined text-[17px]">shopping_bag</span>
+<span id="mobile-cart-total">4 800 DA</span>
+</button>
+</div>
+<!-- Cart Quick Notification Toast -->
+<div class="fixed top-24 right-4 z-50 transform translate-x-full transition-transform duration-300 pointer-events-none opacity-0" id="cart-toast">
+<div class="bg-primary text-white px-4 py-3 rounded-2xl shadow-xl flex items-center gap-3 border border-primary-fixed/30">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div>
+<p class="text-xs font-bold leading-tight" id="toast-title">Article ajouté au panier !</p>
+<p class="text-[11px] text-gray-200" id="toast-subtitle">Total : 5 900 DA (4 articles)</p>
+</div>
+</div>
+</div>
+<!-- Modern Clean Responsive Footer -->
+<footer class="w-full bg-white border-t border-outline-variant/30 mt-16 text-on-surface">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+<!-- Col 1: Brand -->
+<div class="space-y-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-xl bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[18px]">restaurant</span>
+</div>
+<span class="text-lg font-extrabold text-primary tracking-tight uppercase">La Dentelle</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            Maison algéroise réinventant la haute gastronomie, la street food au matlouh artisanal et la haute confiserie de la Casbah.
+          </p>
+<div class="text-xs font-semibold text-primary flex items-center gap-1.5 pt-1">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Cuisine ouverte : 11h30 – 23h30
+          </div>
+</div>
+<!-- Col 2: Communes Desservies -->
+<div class="space-y-2">
+<h4 class="text-sm font-bold text-primary uppercase tracking-wider">Zones de Livraison</h4>
+<ul class="text-xs text-on-surface-variant space-y-1.5">
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-secondary">check</span> Hydra &amp; Sidi Yahia (30–35 min)</li>
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-secondary">check</span> El Biar &amp; Telemly (35–40 min)</li>
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-secondary">check</span> Alger Centre &amp; Didouche (40–45 min)</li>
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-secondary">check</span> Dely Ibrahim &amp; Chéraga (45 min)</li>
+</ul>
+</div>
+<!-- Col 3: Carte & Commande -->
+<div class="space-y-2">
+<h4 class="text-sm font-bold text-primary uppercase tracking-wider">La Carte</h4>
+<ul class="text-xs text-on-surface-variant space-y-1.5">
+<li><a class="hover:text-primary" href="#sandwiches">Sandwiches &amp; Matlouh Artisanal</a></li>
+<li><a class="hover:text-primary" href="#douceurs">Makrout El Louz &amp; Pâtisseries</a></li>
+<li><a class="hover:text-primary" href="#plats-signatures">Rechta, Couscous &amp; Tajines</a></li>
+<li><a class="hover:text-primary" href="#boissons">Cherbet Fraîche de Boufarik</a></li>
+</ul>
+</div>
+<!-- Col 4: Contact & Conciergerie -->
+<div class="space-y-3">
+<h4 class="text-sm font-bold text-primary uppercase tracking-wider">Service Client</h4>
+<p class="text-xs text-on-surface-variant">Des questions sur les allergènes ou une commande de réception ?</p>
+<div class="text-xs space-y-1">
+<p class="font-bold text-primary">Tél : +213 (0) 23 54 88 90</p>
+<p class="text-on-surface-variant">WhatsApp : +213 (0) 550 12 34 56</p>
+<p class="text-on-surface-variant">Hydra, Alger, Algérie</p>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant/20 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-on-surface-variant">
+<p>© 2025 La Dentelle Alger. Tous droits réservés. Gastronomie &amp; Terroirs Algériens.</p>
+<div class="flex items-center gap-4">
+<a class="hover:text-primary" href="#">Conditions générales</a>
+<a class="hover:text-primary" href="#">Mentions légales</a>
+<a class="hover:text-primary" href="#">Livraison sécurisée</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Vanilla Carousel & Cart Interactive Script -->
+<script>
+    let currentSlide = 0;
+    const totalSlides = 3;
+    let slideInterval;
+
+    function showSlide(index) {
+      currentSlide = (index + totalSlides) % totalSlides;
+      for (let i = 0; i < totalSlides; i++) {
+        const slide = document.getElementById(`slide-${i}`);
+        const dot = document.getElementById(`dot-${i}`);
+        if (i === currentSlide) {
+          slide.classList.remove('opacity-0', 'z-0');
+          slide.classList.add('opacity-100', 'z-10');
+          dot.classList.remove('w-2.5', 'bg-white/50');
+          dot.classList.add('w-8', 'bg-secondary-container');
+        } else {
+          slide.classList.remove('opacity-100', 'z-10');
+          slide.classList.add('opacity-0', 'z-0');
+          dot.classList.remove('w-8', 'bg-secondary-container');
+          dot.classList.add('w-2.5', 'bg-white/50');
+        }
+      }
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+      resetAutoPlay();
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+      resetAutoPlay();
+    }
+
+    function goToSlide(index) {
+      showSlide(index);
+      resetAutoPlay();
+    }
+
+    function startAutoPlay() {
+      slideInterval = setInterval(() => {
+        showSlide(currentSlide + 1);
+      }, 5000);
+    }
+
+    function resetAutoPlay() {
+      clearInterval(slideInterval);
+      startAutoPlay();
+    }
+
+    // Cart state simulation
+    let currentCartCount = 3;
+    let currentCartTotal = 4800;
+
+    function addToCart(itemName, price) {
+      currentCartCount += 1;
+      currentCartTotal += price;
+
+      const formattedTotal = currentCartTotal.toLocaleString('fr-FR') + ' DA';
+      document.getElementById('cart-count').innerText = currentCartCount;
+      document.getElementById('cart-total').innerText = formattedTotal;
+      document.getElementById('mobile-cart-total').innerText = formattedTotal;
+
+      const toast = document.getElementById('cart-toast');
+      document.getElementById('toast-title').innerText = `${itemName} ajouté !`;
+      document.getElementById('toast-subtitle').innerText = `Total : ${formattedTotal} (${currentCartCount} articles)`;
+
+      toast.classList.remove('translate-x-full', 'opacity-0');
+      toast.classList.add('translate-x-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-x-0', 'opacity-100');
+        toast.classList.add('translate-x-full', 'opacity-0');
+      }, 2500);
+    }
+
+    function triggerCartToast() {
+      const toast = document.getElementById('cart-toast');
+      const formattedTotal = currentCartTotal.toLocaleString('fr-FR') + ' DA';
+      document.getElementById('toast-title').innerText = `Votre Panier (${currentCartCount} articles)`;
+      document.getElementById('toast-subtitle').innerText = `Sous-total : ${formattedTotal} · Livraison en cours`;
+
+      toast.classList.remove('translate-x-full', 'opacity-0');
+      toast.classList.add('translate-x-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-x-0', 'opacity-100');
+        toast.classList.add('translate-x-full', 'opacity-0');
+      }, 2500);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      startAutoPlay();
+    });
+  </script>
+</body></html>

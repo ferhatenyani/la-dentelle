@@ -1,26 +1,199 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ---------------------------------------------------------------------------
+   La Dentelle design tokens (stitch_ladentelle/modern_maghreb_fine_dining/DESIGN.md)
+   --------------------------------------------------------------------------- */
+@theme {
+  --font-sans: var(--font-jakarta), "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* Colours */
+  --color-surface: #f3fbf8;
+  --color-surface-dim: #d3dcd8;
+  --color-surface-bright: #f3fbf8;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #edf6f2;
+  --color-surface-container: #e7f0ec;
+  --color-surface-container-high: #e1eae6;
+  --color-surface-container-highest: #dce4e1;
+  --color-surface-variant: #dce4e1;
+  --color-on-surface: #151d1b;
+  --color-on-surface-variant: #3f4946;
+  --color-inverse-surface: #2a3230;
+  --color-inverse-on-surface: #eaf3ef;
+  --color-outline: #6f7977;
+  --color-outline-variant: #bfc9c5;
+  --color-surface-tint: #23695f;
+  --color-background: #f3fbf8;
+  --color-on-background: #151d1b;
+
+  --color-primary: #00443d;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #135d54;
+  --color-on-primary-container: #91d3c8;
+  --color-inverse-primary: #90d3c7;
+  --color-primary-fixed: #acefe3;
+  --color-primary-fixed-dim: #90d3c7;
+  --color-on-primary-fixed: #00201c;
+  --color-on-primary-fixed-variant: #005048;
+
+  --color-secondary: #775a00;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fed269;
+  --color-on-secondary-container: #765900;
+  --color-secondary-fixed: #ffdf99;
+  --color-secondary-fixed-dim: #ecc15a;
+  --color-on-secondary-fixed: #251a00;
+  --color-on-secondary-fixed-variant: #5a4300;
+
+  --color-tertiary: #6a2700;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #8c3a0b;
+  --color-on-tertiary-container: #ffb695;
+  --color-tertiary-fixed: #ffdbcc;
+  --color-tertiary-fixed-dim: #ffb694;
+
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* Typography scale */
+  --text-display: 48px;
+  --text-display--line-height: 56px;
+  --text-display--letter-spacing: -0.03em;
+  --text-display--font-weight: 700;
+  --text-display-mobile: 34px;
+  --text-display-mobile--line-height: 42px;
+  --text-display-mobile--letter-spacing: -0.02em;
+  --text-display-mobile--font-weight: 700;
+  --text-headline-lg: 36px;
+  --text-headline-lg--line-height: 44px;
+  --text-headline-lg--letter-spacing: -0.02em;
+  --text-headline-lg--font-weight: 600;
+  --text-headline-lg-mobile: 28px;
+  --text-headline-lg-mobile--line-height: 36px;
+  --text-headline-lg-mobile--letter-spacing: -0.015em;
+  --text-headline-lg-mobile--font-weight: 600;
+  --text-headline-md: 26px;
+  --text-headline-md--line-height: 34px;
+  --text-headline-md--letter-spacing: -0.01em;
+  --text-headline-md--font-weight: 600;
+  --text-headline-sm: 20px;
+  --text-headline-sm--line-height: 28px;
+  --text-headline-sm--letter-spacing: -0.005em;
+  --text-headline-sm--font-weight: 600;
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+  --text-body-md: 15px;
+  --text-body-md--line-height: 24px;
+  --text-body-sm: 13px;
+  --text-body-sm--line-height: 20px;
+  --text-body-sm--letter-spacing: 0.01em;
+  --text-label-lg: 14px;
+  --text-label-lg--line-height: 20px;
+  --text-label-lg--letter-spacing: 0.02em;
+  --text-label-lg--font-weight: 600;
+  --text-label-md: 12px;
+  --text-label-md--line-height: 16px;
+  --text-label-md--letter-spacing: 0.04em;
+  --text-label-md--font-weight: 600;
+  --text-label-sm: 10px;
+  --text-label-sm--line-height: 14px;
+  --text-label-sm--letter-spacing: 0.08em;
+  --text-label-sm--font-weight: 700;
+
+  /* Spacing aliases */
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2.5rem;
+  --spacing-gutter-sm: 1rem;
+  --spacing-gutter: 1.5rem;
+  --spacing-gutter-lg: 2rem;
+  --spacing-margin: 1.5rem;
+  --spacing-margin-md: 2.5rem;
+  --spacing-margin-lg: 4rem;
+
+  /* Elevation */
+  --shadow-card: 0 4px 20px -2px rgba(28, 36, 34, 0.04);
+  --shadow-soft: 0 4px 16px rgba(19, 93, 84, 0.06);
+  --shadow-float: 0 12px 32px -4px rgba(19, 93, 84, 0.12), 0 4px 12px -2px rgba(28, 36, 34, 0.03);
+  --shadow-header: 0 4px 24px rgba(19, 93, 84, 0.06);
+
+  --breakpoint-xs: 400px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-padding-top: 6rem;
+  }
+  body {
+    @apply bg-surface text-on-surface font-sans antialiased;
+    overscroll-behavior-y: none;
+  }
+  ::selection {
+    @apply bg-primary-fixed text-primary;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-primary-container);
+    outline-offset: 2px;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Material Symbols (self-hosted subset, see scripts/fetch-icons.mjs) */
+.material-symbols-outlined {
+  font-family: var(--font-symbols);
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  flex-shrink: 0;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+.material-symbols-outlined.icon-fill {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

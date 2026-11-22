@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Hidden: the badge overlaps sticky mobile CTAs. Errors are still surfaced.
+  devIndicators: false,
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {
