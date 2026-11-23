@@ -99,6 +99,8 @@ Run: `npx playwright test` (builds + serves prod on :3200) or `PW_BASE_URL=http:
 | `product.spec.ts` | details (5), gallery, 404, quantity selection (6), add to cart (7), favourites |
 | `auth.spec.ts` | phone/OTP + email validation & login, `?next=`, signup validation + duplicate checks, guest (10) |
 | `cart-checkout.spec.ts` | add from catalogue + persistence after reload (17), qty/remove (8), totals & delivery fee (9), guest validation, prefill (12), completion (13), confirmation (14), order in history (15), save new address to profile |
+| `transitions.spec.ts` | view transitions run on forward/nested/cross-group navigation, direction, anchored chrome, tab-bar dock, animated Retour, deep-link Retour stays on site, rapid taps, reduced motion |
+| `ux-audit.spec.ts` | nothing cut off at 320–390 px (login/OTP/email/signup states + all routes; catches `overflow:hidden` clipping), internal links resolve, controls named, images load, ≥32 px tap targets, login returns to origin page, sheet focus/Escape, empty states offer a CTA |
 | `profile-tracking.spec.ts` | auth guard, profile edit persists + prefills checkout (11), address add/default, history filters + detail + reorder, logout, tracking statuses for en-route / new / delivered orders (16) |
 
 **Final run (M8):** `63 passed, 7 skipped` on the production build (skips are intentional: desktop-only flows in the mobile project and the explicit-viewport smoke suite). ESLint: 0 problems. `tsc --noEmit`: 0 errors.
@@ -124,7 +126,7 @@ Run: `npx playwright test` (builds + serves prod on :3200) or `PW_BASE_URL=http:
 - State: `lib/store/{store,actions,hooks}.ts`; tracking model `lib/tracking.ts`; formatters `lib/format.ts` (deterministic, NBSP grouping: `1 100 DA`).
 - UI: `components/ui/{Icon,Button,QuantitySelector,Field,Toast,Sheet,States}.tsx`.
 - Product: `components/product/{ProductImage,ProductActions,ProductCard}.tsx` (FeatureCard = home desktop, CatalogCard = catalogue desktop, CompactCard = mobile 2-up).
-- Layout: `app/(shop)/layout.tsx` + `template.tsx` (page transition); `components/layout/{DesktopHeader,MobileChrome,SiteFooter,nav}.tsx`. Mobile titles/back buttons/tab-bar visibility per route in `nav.ts#mobileRoute`.
+- Layout: `app/(shop)/layout.tsx` (page transitions: see M9); `components/layout/{DesktopHeader,MobileChrome,SiteFooter,nav}.tsx`. Mobile titles/back buttons/tab-bar visibility per route in `nav.ts#mobileRoute`.
 - Tooling: `playwright.config.ts` (desktop 1440×900 + Pixel 7 projects, builds & serves on :3200 or uses `PW_BASE_URL`), `scripts/shot.mjs` (dev screenshot + overflow check; on Git Bash use `MSYS_NO_PATHCONV=1`).
 - Decisions: `ProductImage` always fills its positioned parent (`absolute inset-0`); desktop nav "À Propos" → "Espace Gourmet" (/compte) since no about content exists (footer carries `#a-propos`).
 
@@ -185,6 +187,13 @@ Run: `npx playwright test` (builds + serves prod on :3200) or `PW_BASE_URL=http:
 - `<Activity>` state preservation handled with `useOnHide` (checkout pending overlay, sheets, auth redirect flag, tablet menu).
 - Dev helpers: `scripts/shot.mjs` (desktop|tablet|mobile screenshots + overflow), `scripts/hydration-check.mjs`, `scripts/find-overflow.mjs`, `scripts/seed-setup.mjs` (demo session for screenshots), `scripts/fetch-icons.mjs`.
 - Production build: all routes static (○) or partial prerender (◐ product pages).
+
+### M9 — Mobile fit, motion & UX audit ✅
+- Login cut off on phones < 400 px: the auth grid had no column template (implicit track sized to the `nowrap` CTA) inside `overflow-hidden`, so content was clipped, not scrollable, and the overflow smoke test missed it. Fixed with `grid-cols-1`/`min-w-0`, shorter CTA label below `xs`.
+- Page transitions moved from a JS `template.tsx` fade to React `<ViewTransition>` (`components/layout/PageTransition.tsx`, per page + per route-group `<main>`): compositor-run parallax push after commit, direction from `NavDirection.tsx` (`html[data-nav-dir]`, spatial route order), anchored header/tab bar/cart pill/toasts, tab bar docks on product pages, desktop-only blur, reduced-motion crossfade, CSS fallback without VT support. Keyframes/tokens in `globals.css`.
+- "Retour" animates (`backWithTransition`) and no longer leaves the site on deep links (`canGoBackInApp`). Browser back/swipe is left to the browser (React flushes popstate synchronously).
+- Compositor-only in-page motion: progress bars & courier marker use transforms (were width/left/top), bottom sheet rises from the edge on phones, no full-screen/per-card `backdrop-blur` on mobile, `transition-all` → `transition`, catalogue grid no longer layout-animates its container, mobile grid/auth panel swap-in, `MotionConfig reducedMotion="user"`.
+- UX: signed-out Profil/Espace Gourmet links go straight to `/connexion?next=/compte` (was two slides via redirect); header/top-bar sign-in returns to the current page; sheets don't auto-focus text fields on touch (keyboard pop); 32 px+ tap targets; cart thumbnail links named.
 
 ## Status
 All 8 milestones complete. Next steps would be backend integration (see notes above) and real GPS tracking.

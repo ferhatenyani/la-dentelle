@@ -45,7 +45,7 @@ function Greeting() {
               {user.firstName} {user.lastName}
             </span>
           ) : (
-            <Link href="/connexion" className="text-headline-sm font-bold tracking-tight text-primary underline-offset-4 hover:underline">
+            <Link href="/connexion" className="-my-2 inline-block py-2 text-headline-sm font-bold tracking-tight text-primary underline-offset-4 hover:underline">
               Se connecter
             </Link>
           )}
@@ -205,7 +205,7 @@ export function MobileHome() {
           <h2 className="text-headline-sm font-bold text-primary">Nos Signatures du Terroir</h2>
           <span className="text-body-sm text-on-surface-variant">Recettes séculaires revisitées par la Cheffe</span>
         </div>
-        <Link href="/menu" className="flex shrink-0 items-center text-label-md font-bold text-secondary">
+        <Link href="/menu" className="-my-2 flex shrink-0 items-center py-3 text-label-md font-bold text-secondary">
           Voir tout <Icon name="chevron_right" size={16} />
         </Link>
       </div>

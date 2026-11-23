@@ -163,6 +163,16 @@
   .tabular {
     font-variant-numeric: tabular-nums;
   }
+  /* Content swap in place (filters, tabs): short, compositor-only. */
+  .animate-swap-in {
+    animation: swap-in 280ms var(--ease-out) both;
+  }
+}
+@keyframes swap-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
 }
 
 /* Material Symbols (self-hosted subset, see scripts/fetch-icons.mjs) */
@@ -185,6 +195,183 @@
 }
 .material-symbols-outlined.icon-fill {
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+/* ---------------------------------------------------------------------------
+   Motion tokens
+   --------------------------------------------------------------------------- */
+:root {
+  /* Expo-out: fast start, long settle. Feels responsive under a finger. */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-page: 420ms;
+  --dur-page-fade: 240ms;
+  --page-shift-in: 72px;
+  --page-shift-out: 48px;
+}
+@media (min-width: 768px) {
+  :root {
+    --dur-page: 460ms;
+    --page-shift-in: 90px;
+    --page-shift-out: 58px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Route transitions (React <ViewTransition>, see components/layout/PageTransition.tsx)
+   Parallax push: the new page slides in over the old one, which drifts back and dims.
+   --------------------------------------------------------------------------- */
+::view-transition {
+  pointer-events: none; /* taps during the animation reach the live page */
+}
+/* Unnamed content (body background, footer) swaps instantly: no full-screen crossfade. */
+::view-transition-old(root) {
+  display: none;
+}
+::view-transition-new(root) {
+  animation: none;
+}
+
+::view-transition-group(.page-out) {
+  z-index: 1;
+}
+::view-transition-group(.page-in) {
+  z-index: 2;
+}
+::view-transition-old(.page-out) {
+  --vt-x: calc(var(--page-shift-out) * -1);
+  transform-origin: 50% 30vh;
+  animation: vt-page-out var(--dur-page) var(--ease-out) both;
+}
+::view-transition-new(.page-in) {
+  --vt-x: var(--page-shift-in);
+  transform-origin: 50% 30vh;
+  animation:
+    vt-page-in var(--dur-page) var(--ease-out) both,
+    vt-fade-in var(--dur-page-fade) var(--ease-out) both;
+}
+html[data-nav-dir="back"]::view-transition-old(.page-out) {
+  --vt-x: var(--page-shift-out);
+}
+html[data-nav-dir="back"]::view-transition-new(.page-in) {
+  --vt-x: calc(var(--page-shift-in) * -1);
+}
+/* Blur hides interpolation artefacts but is expensive on full-screen layers: desktop only. */
+@media (hover: hover) and (pointer: fine) {
+  ::view-transition-old(.page-out) {
+    animation: vt-page-out var(--dur-page) var(--ease-out) both, vt-blur-out var(--dur-page) var(--ease-out) both;
+  }
+}
+
+@keyframes vt-page-in {
+  from {
+    transform: translateX(var(--vt-x)) scale(0.97);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes vt-page-out {
+  to {
+    transform: translateX(var(--vt-x)) scale(0.975);
+    opacity: 0.4;
+  }
+}
+@keyframes vt-blur-out {
+  to {
+    filter: blur(1.5px);
+  }
+}
+
+/* Persistent chrome stays put above the sliding pages (spatial anchor). */
+::view-transition-group(site-header),
+::view-transition-group(mobile-top-bar),
+::view-transition-group(bottom-nav),
+::view-transition-group(cart-pill),
+::view-transition-group(toasts) {
+  animation: none;
+  z-index: 10;
+}
+::view-transition-old(site-header),
+::view-transition-old(mobile-top-bar),
+::view-transition-old(bottom-nav),
+::view-transition-old(cart-pill),
+::view-transition-old(toasts) {
+  display: none;
+}
+::view-transition-new(site-header),
+::view-transition-new(mobile-top-bar),
+::view-transition-new(bottom-nav),
+::view-transition-new(cart-pill),
+::view-transition-new(toasts) {
+  animation: none;
+}
+/* Headers present on one side only (shop ↔ connexion): fade instead of popping. */
+::view-transition-old(site-header):only-child,
+::view-transition-old(mobile-top-bar):only-child {
+  display: block;
+  animation: vt-fade-out 180ms var(--ease-out) both;
+}
+::view-transition-new(site-header):only-child,
+::view-transition-new(mobile-top-bar):only-child {
+  animation: vt-fade-in 260ms var(--ease-out) both;
+}
+/* Tab bar leaving (e.g. Carte → fiche plat) or arriving: slide it rather than pop. */
+::view-transition-old(bottom-nav):only-child {
+  display: block;
+  animation: vt-dock-out 220ms var(--ease-out) both;
+}
+::view-transition-new(bottom-nav):only-child {
+  animation: vt-dock-in 320ms var(--ease-out) both;
+}
+@keyframes vt-dock-out {
+  to {
+    transform: translateY(110%);
+    opacity: 0;
+  }
+}
+@keyframes vt-dock-in {
+  from {
+    transform: translateY(110%);
+    opacity: 0;
+  }
+}
+
+/* No View Transitions support (older Safari/Firefox): light entrance on the live DOM instead. */
+@supports not (view-transition-name: none) {
+  .page-shell {
+    animation: page-fallback-in 320ms var(--ease-out) both;
+  }
+  @keyframes page-fallback-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Keep a short crossfade (orientation cue) but no positional movement. */
+  ::view-transition-old(.page-out) {
+    animation: vt-fade-out 120ms linear both;
+  }
+  ::view-transition-new(.page-in) {
+    animation: vt-fade-in 160ms linear both;
+  }
+  ::view-transition-old(bottom-nav):only-child,
+  ::view-transition-new(bottom-nav):only-child {
+    animation: none;
+  }
+}
+@keyframes vt-fade-out {
+  to {
+    opacity: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

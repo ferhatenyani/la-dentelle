@@ -9,6 +9,7 @@ import { Icon } from "@/components/ui/Icon";
 import { CompactCard, FeatureCard } from "@/components/product/ProductCard";
 import { ProductGallery } from "@/components/product/ProductGallery";
 import { ProductPurchase } from "@/components/product/ProductPurchase";
+import { PageTransition } from "@/components/layout/PageTransition";
 
 export function generateStaticParams() {
   return PRODUCTS.map((p) => ({ slug: p.slug }));
@@ -29,11 +30,13 @@ const ASSURANCES = [
 
 export default function ProductPage({ params }: PageProps<"/menu/[slug]">) {
   return (
-    <Suspense fallback={<ProductSkeleton />}>
-      {params.then(({ slug }) => (
-        <ProductDetail slug={slug} />
-      ))}
-    </Suspense>
+    <PageTransition>
+      <Suspense fallback={<ProductSkeleton />}>
+        {params.then(({ slug }) => (
+          <ProductDetail slug={slug} />
+        ))}
+      </Suspense>
+    </PageTransition>
   );
 }
 
@@ -177,7 +180,7 @@ function ProductDetail({ slug }: { slug: string }) {
               Accords suggérés
             </h2>
           </div>
-          <Link href={`/menu?categorie=${category.id}`} className="flex shrink-0 items-center gap-1 text-label-md font-bold text-primary hover:underline">
+          <Link href={`/menu?categorie=${category.id}`} className="-my-3 flex shrink-0 items-center gap-1 py-3 text-label-md font-bold text-primary hover:underline">
             Voir {category.short.toLowerCase()} <Icon name="chevron_right" size={16} />
           </Link>
         </div>

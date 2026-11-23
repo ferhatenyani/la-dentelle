@@ -101,6 +101,7 @@ export function Toaster() {
   return (
     <div
       aria-live="polite"
+      style={{ viewTransitionName: "toasts" }}
       className="pointer-events-none fixed inset-x-0 top-[84px] z-[70] flex flex-col items-center gap-2 px-4 md:inset-x-auto md:right-6 md:top-24 md:w-[380px] md:items-end md:px-0"
     >
       <AnimatePresence initial={false}>

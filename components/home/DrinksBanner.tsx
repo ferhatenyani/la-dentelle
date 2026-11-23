@@ -27,7 +27,7 @@ export function DrinksBanner() {
           <button
             type="button"
             onClick={() => add(cherbet)}
-            className="flex items-center gap-2 rounded-xl border border-outline-variant/40 bg-white px-4 py-2.5 text-sm font-bold text-primary shadow-sm transition-all hover:border-primary active:scale-95"
+            className="flex items-center gap-2 rounded-xl border border-outline-variant/40 bg-white px-4 py-2.5 text-sm font-bold text-primary shadow-sm transition hover:border-primary active:scale-95"
           >
             <Icon name="local_drink" size={18} />
             <span>Cherbet Citron 1L ({formatPrice(cherbet.price)})</span>
@@ -35,7 +35,7 @@ export function DrinksBanner() {
           <button
             type="button"
             onClick={() => add(the)}
-            className="flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-primary-container active:scale-95"
+            className="flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-primary-container active:scale-95"
           >
             <Icon name="emoji_food_beverage" size={18} />
             <span>Thé Menthe ({formatPrice(the.price)})</span>

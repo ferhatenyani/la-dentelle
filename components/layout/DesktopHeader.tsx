@@ -10,7 +10,7 @@ import { cn } from "@/lib/cn";
 import { formatPrice } from "@/lib/format";
 import { useCart, useSessionUser } from "@/lib/store/hooks";
 import { Icon } from "@/components/ui/Icon";
-import { DESKTOP_NAV } from "./nav";
+import { DESKTOP_NAV, loginHref, navHref } from "./nav";
 
 export function BrandMark({ compact = false, className }: { compact?: boolean; className?: string }) {
   return (
@@ -36,7 +36,7 @@ export function DesktopHeader() {
   useOnHide(() => setMenuOpen(false));
 
   return (
-    <header className="sticky top-0 z-50 hidden w-full bg-surface/90 shadow-header backdrop-blur-xl md:block">
+    <header style={{ viewTransitionName: "site-header" }} className="sticky top-0 z-50 hidden w-full bg-surface/90 shadow-header backdrop-blur-xl md:block">
       <div className="mx-auto flex h-20 max-w-[1320px] items-center justify-between gap-6 px-6">
         <BrandMark />
         <nav aria-label="Navigation principale" className="hidden items-center gap-5 lg:flex xl:gap-7">
@@ -45,7 +45,7 @@ export function DesktopHeader() {
             return (
               <Link
                 key={item.href}
-                href={item.href}
+                href={navHref(item.href, !!user)}
                 aria-current={active ? "page" : undefined}
                 className={cn(
                   "relative whitespace-nowrap py-1.5 text-label-lg tracking-normal transition-colors",
@@ -77,7 +77,7 @@ export function DesktopHeader() {
           <Link
             href="/menu#recherche"
             aria-label="Rechercher un plat"
-            className="grid size-9 place-items-center rounded-full border border-outline-variant/30 bg-surface-container-lowest text-on-surface-variant shadow-sm transition-all hover:border-primary/30 hover:text-primary"
+            className="grid size-9 place-items-center rounded-full border border-outline-variant/30 bg-surface-container-lowest text-on-surface-variant shadow-sm transition hover:border-primary/30 hover:text-primary"
           >
             <Icon name="search" size={19} />
           </Link>
@@ -88,7 +88,7 @@ export function DesktopHeader() {
           <Link
             href="/panier"
             data-testid="header-cart"
-            className="flex items-center gap-2.5 rounded-full border border-outline-variant/40 bg-surface-container-lowest px-4 py-2 shadow-sm transition-all hover:border-primary hover:bg-surface-container-low"
+            className="flex items-center gap-2.5 rounded-full border border-outline-variant/40 bg-surface-container-lowest px-4 py-2 shadow-sm transition hover:border-primary hover:bg-surface-container-low"
           >
             <span className="relative">
               <Icon name="shopping_bag" size={20} className="text-primary" />
@@ -109,7 +109,7 @@ export function DesktopHeader() {
             </span>
           </Link>
           <Link
-            href={user ? "/compte" : "/connexion"}
+            href={user ? "/compte" : loginHref(pathname)}
             aria-label={user ? `Espace de ${user.firstName}` : "Se connecter"}
             data-testid="header-account"
             className="grid size-9 place-items-center rounded-full bg-primary text-[13px] font-bold text-on-primary shadow-sm transition-colors hover:bg-primary-container"
@@ -123,7 +123,7 @@ export function DesktopHeader() {
           {[...DESKTOP_NAV, { href: "/favoris", label: "Mes Favoris", match: (p: string) => p.startsWith("/favoris") }].map((item) => (
             <Link
               key={item.href}
-              href={item.href}
+              href={navHref(item.href, !!user)}
               onClick={() => setMenuOpen(false)}
               aria-current={item.match(pathname) ? "page" : undefined}
               className={cn(

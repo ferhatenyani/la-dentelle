@@ -129,7 +129,7 @@ export function AuthScreen() {
   };
 
   const panel = (
-    <div id="auth-panel" role="tabpanel" aria-labelledby={`tab-${mode}`}>
+    <div key={mode} id="auth-panel" role="tabpanel" aria-labelledby={`tab-${mode}`} className="animate-swap-in">
       {mode === "login" ? (
         <LoginForm onAuthenticated={onAuthenticated} onSwitchToSignup={() => setMode("signup")} />
       ) : (
@@ -148,7 +148,7 @@ export function AuthScreen() {
 
   return (
     <div className="flex min-h-dvh w-full items-center justify-center md:p-8 lg:p-12">
-      <div className="grid w-full max-w-[1500px] overflow-hidden md:min-h-[760px] md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:rounded-3xl md:bg-surface-container-lowest md:shadow-float">
+      <div className="grid w-full max-w-[1500px] grid-cols-1 overflow-hidden md:min-h-[760px] md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:rounded-3xl md:bg-surface-container-lowest md:shadow-float">
         {/* ---------- Brand panel (desktop) */}
         <aside className="relative hidden flex-col justify-between overflow-hidden bg-primary p-12 text-white md:flex">
           <Image src="/images/auth-bg.jpg" alt="" fill sizes="40vw" className="object-cover opacity-40 mix-blend-luminosity" loading="eager" />
@@ -184,13 +184,13 @@ export function AuthScreen() {
         </aside>
 
         {/* ---------- Form side */}
-        <div className="flex flex-col px-5 pb-10 pt-6 md:px-12 md:py-12">
+        <div className="flex min-w-0 flex-col px-4 pb-10 pt-6 xs:px-5 md:px-12 md:py-12">
           {/* Mobile header (auth-mobile) */}
           <div className="mb-6 flex items-center justify-between md:hidden">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-secondary-fixed/60 px-3 py-1.5 text-label-md uppercase text-on-secondary-fixed-variant">
               <Icon name="hotel_class" size={18} /> Maison fondée à Alger
             </span>
-            <Link href="/menu" className="flex items-center text-label-lg text-primary">
+            <Link href="/menu" className="-my-3 -mr-2 flex items-center py-3 pl-3 pr-2 text-label-lg text-primary">
               Passer <Icon name="chevron_right" size={18} />
             </Link>
           </div>

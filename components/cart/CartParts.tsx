@@ -25,7 +25,7 @@ export function CartLineRow({ line, compact }: { line: CartLine; compact?: boole
   if (compact) {
     return (
       <div data-testid="cart-line" className="flex items-center gap-3 rounded-2xl bg-surface-container-lowest p-3 shadow-card">
-        <Link href={`/menu/${product.slug}`} className="relative size-16 shrink-0 overflow-hidden rounded-xl">
+        <Link href={`/menu/${product.slug}`} aria-label={product.name} className="relative size-16 shrink-0 overflow-hidden rounded-xl">
           <ProductImage product={product} sizes="64px" />
         </Link>
         <div className="min-w-0 flex-1">
@@ -44,7 +44,7 @@ export function CartLineRow({ line, compact }: { line: CartLine; compact?: boole
 
   return (
     <div data-testid="cart-line" className="flex gap-5 rounded-2xl bg-surface-container-lowest p-4 shadow-card">
-      <Link href={`/menu/${product.slug}`} className="relative aspect-[4/3] w-36 shrink-0 overflow-hidden rounded-xl">
+      <Link href={`/menu/${product.slug}`} aria-label={product.name} className="relative aspect-[4/3] w-36 shrink-0 overflow-hidden rounded-xl">
         <ProductImage product={product} sizes="144px" imgClassName="transition-transform duration-500 hover:scale-105" />
       </Link>
       <div className="flex min-w-0 flex-1 flex-col justify-between gap-3">
@@ -95,7 +95,7 @@ export function FreeDeliveryMeter({ subtotal }: { subtotal: number }) {
         )}
       </p>
       <div className="h-1.5 overflow-hidden rounded-full bg-surface-container-high">
-        <motion.div className="h-full rounded-full bg-secondary-container" initial={false} animate={{ width: `${pct}%` }} transition={{ type: "spring", stiffness: 140, damping: 22 }} />
+        <motion.div className="h-full w-full rounded-full bg-secondary-container" initial={false} animate={{ x: `${pct - 100}%` }} transition={{ type: "spring", stiffness: 140, damping: 22 }} />
       </div>
     </div>
   );

@@ -9,7 +9,8 @@ import { formatPrice } from "@/lib/format";
 import { useCart, useSessionUser } from "@/lib/store/hooks";
 import { Icon } from "@/components/ui/Icon";
 import { toast } from "@/components/ui/Toast";
-import { MOBILE_NAV, mobileRoute } from "./nav";
+import { backWithTransition, canGoBackInApp } from "./NavDirection";
+import { loginHref, MOBILE_NAV, mobileRoute, navHref } from "./nav";
 
 /** Mobile top app bar (home-page-mobile header), with back button on sub-pages. */
 export function MobileTopBar() {
@@ -19,14 +20,14 @@ export function MobileTopBar() {
   const route = mobileRoute(pathname);
 
   return (
-    <header className="pt-safe sticky top-0 z-50 w-full bg-surface/85 shadow-[0_1px_8px_rgba(0,0,0,0.04)] backdrop-blur-xl md:hidden">
+    <header style={{ viewTransitionName: "mobile-top-bar" }} className="pt-safe sticky top-0 z-50 w-full bg-surface/85 shadow-[0_1px_8px_rgba(0,0,0,0.04)] backdrop-blur-xl md:hidden">
       <div className="flex h-[72px] items-center justify-between gap-2 px-4 xs:px-margin">
         <div className="flex min-w-0 items-center gap-2">
           {route.back && (
             <button
               type="button"
               aria-label="Retour"
-              onClick={() => (window.history.length > 1 ? router.back() : router.push(route.back!))}
+              onClick={() => (canGoBackInApp() ? backWithTransition(() => router.back()) : router.push(route.back!))}
               className="-ml-2 grid size-11 shrink-0 place-items-center rounded-full text-on-surface hover:bg-surface-container"
             >
               <Icon name="arrow_back_ios_new" size={20} />
@@ -52,7 +53,7 @@ export function MobileTopBar() {
             <Icon name="notifications" />
           </button>
           <Link
-            href={user ? "/compte" : "/connexion"}
+            href={user ? "/compte" : loginHref(pathname)}
             aria-label={user ? "Mon profil" : "Se connecter"}
             className="ml-1 grid size-9 place-items-center rounded-full bg-primary text-[13px] font-bold text-on-primary shadow-sm"
           >
@@ -67,10 +68,11 @@ export function MobileTopBar() {
 /** Floating pill tab bar (home-page-mobile nav). */
 export function BottomNav() {
   const pathname = usePathname();
+  const user = useSessionUser();
   const route = mobileRoute(pathname);
   if (route.hideTabBar) return null;
   return (
-    <nav aria-label="Navigation mobile" className="pb-safe pointer-events-none fixed inset-x-0 bottom-0 z-50 md:hidden">
+    <nav aria-label="Navigation mobile" style={{ viewTransitionName: "bottom-nav" }} className="pb-safe pointer-events-none fixed inset-x-0 bottom-0 z-50 md:hidden">
       <div className="flex items-center justify-center px-margin pb-4">
         <div className="pointer-events-auto flex h-16 w-full max-w-sm items-center justify-around rounded-full bg-surface-container-lowest/90 px-2 shadow-float backdrop-blur-xl">
           {MOBILE_NAV.map((item) => {
@@ -78,7 +80,7 @@ export function BottomNav() {
             return (
               <Link
                 key={item.href}
-                href={item.href}
+                href={navHref(item.href, !!user)}
                 aria-label={item.label}
                 aria-current={active ? "page" : undefined}
                 className={cn(
@@ -116,6 +118,7 @@ export function MobileCartPill() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 30, opacity: 0 }}
           transition={{ type: "spring", stiffness: 380, damping: 30 }}
+          style={{ viewTransitionName: "cart-pill" }}
           className="pointer-events-none fixed inset-x-0 bottom-[92px] z-40 flex justify-center px-margin md:hidden"
         >
           <Link

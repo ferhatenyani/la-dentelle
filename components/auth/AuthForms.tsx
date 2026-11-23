@@ -57,7 +57,7 @@ export function PhoneInput({
         aria-invalid={invalid || undefined}
         aria-describedby={describedBy}
         onChange={(e) => onChange(e.target.value.replace(/[^\d\s+]/g, "").slice(0, 16))}
-        className={cn(inputClasses, "tabular tracking-wide")}
+        className={cn(inputClasses, "min-w-0 tabular tracking-wide")}
       />
     </div>
   );
@@ -178,7 +178,8 @@ export function LoginForm({ onAuthenticated, onSwitchToSignup }: { onAuthenticat
               <Icon name="sms" size={18} /> Un code de vérification SMS instantané vous sera envoyé.
             </p>
             <Button type="submit" size="lg" icon="send" loading={otpPending} variant="solid" className="w-full">
-              Recevoir mon code de confirmation
+              <span className="xs:hidden">Recevoir mon code</span>
+              <span className="hidden xs:inline">Recevoir mon code de confirmation</span>
             </Button>
           </motion.form>
         ) : (
@@ -327,7 +328,7 @@ export function LoginForm({ onAuthenticated, onSwitchToSignup }: { onAuthenticat
       )}
       <p className="text-center text-body-sm text-on-surface-variant">
         Nouveau chez nous ?{" "}
-        <button type="button" onClick={onSwitchToSignup} className="font-bold text-primary hover:underline">
+        <button type="button" onClick={onSwitchToSignup} className="-my-3 inline-block py-3 font-bold text-primary hover:underline">
           Créer un compte
         </button>
       </p>

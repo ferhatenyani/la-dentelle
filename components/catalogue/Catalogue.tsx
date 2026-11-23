@@ -122,7 +122,7 @@ function CategoryPills({ value, onChange, mobile }: { value: CategoryId | "all";
             aria-pressed={active}
             onClick={() => onChange(c.id)}
             className={cn(
-              "flex shrink-0 items-center gap-1.5 whitespace-nowrap px-4 py-2 text-label-md shadow-sm transition-all",
+              "flex shrink-0 items-center gap-1.5 whitespace-nowrap px-4 py-2 text-label-md shadow-sm transition",
               mobile ? "rounded-full" : "rounded-xl",
               active
                 ? "bg-primary font-bold text-on-primary shadow-primary/20"
@@ -148,7 +148,7 @@ function LabelFilters({ value, onToggle, onClear }: { value: LabelId[]; onToggle
         aria-pressed={value.length === 0}
         onClick={onClear}
         className={cn(
-          "flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-label-md shadow-sm transition-all",
+          "flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-label-md shadow-sm transition",
           value.length === 0 ? "bg-primary-container font-semibold text-on-primary" : "border border-outline-variant/40 bg-surface-container-lowest font-medium text-on-surface-variant hover:border-primary hover:text-primary",
         )}
       >
@@ -163,7 +163,7 @@ function LabelFilters({ value, onToggle, onClear }: { value: LabelId[]; onToggle
             aria-pressed={active}
             onClick={() => onToggle(l.id)}
             className={cn(
-              "flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-label-md shadow-sm transition-all",
+              "flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-label-md shadow-sm transition",
               active ? "bg-primary-container font-semibold text-on-primary" : "border border-outline-variant/40 bg-surface-container-lowest font-medium text-on-surface-variant hover:border-primary hover:text-primary",
             )}
           >
@@ -265,7 +265,7 @@ export function Catalogue() {
           </div>
         </div>
         <div className="mx-auto max-w-[1320px] px-6 pb-24 pt-6">
-          <motion.div layout className="grid grid-cols-2 gap-6 lg:grid-cols-3" data-testid="catalogue-grid">
+          <div className="grid grid-cols-2 gap-6 lg:grid-cols-3" data-testid="catalogue-grid">
             <AnimatePresence mode="popLayout" initial={false}>
               {results.map((p, i) => (
                 <motion.div
@@ -274,7 +274,7 @@ export function Catalogue() {
                   initial={{ opacity: 0, scale: 0.97 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.97 }}
-                  transition={{ duration: 0.22 }}
+                  transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
                   className="flex"
                 >
                   <CatalogCard product={p} priority={i < 3} />
@@ -282,7 +282,7 @@ export function Catalogue() {
               ))}
             </AnimatePresence>
             {results.length === 0 && empty}
-          </motion.div>
+          </div>
         </div>
       </div>
 
@@ -339,7 +339,7 @@ export function Catalogue() {
                 type="button"
                 aria-pressed={active}
                 onClick={() => toggleLabel(l.id)}
-                className={cn("flex shrink-0 items-center gap-1 rounded-full px-2.5 py-1.5 text-label-sm uppercase tracking-wider transition-colors", active ? l.on : l.off)}
+                className={cn("flex h-8 shrink-0 items-center gap-1 rounded-full px-3 text-label-sm uppercase tracking-wider transition-colors", active ? l.on : l.off)}
               >
                 <Icon name={active ? "check" : l.icon} size={14} />
                 {l.name}
@@ -347,7 +347,11 @@ export function Catalogue() {
             );
           })}
         </div>
-        <div className="grid grid-cols-2 gap-3" data-testid="catalogue-grid-mobile">
+        <div
+          key={`${query.category}|${query.labels.join(",")}|${query.sort}`}
+          className="animate-swap-in grid grid-cols-2 gap-3"
+          data-testid="catalogue-grid-mobile"
+        >
           {results.map((p, i) => (
             <CompactCard key={p.slug} product={p} variant="menu" priority={i < 4} />
           ))}

@@ -79,9 +79,9 @@ export function ProductGallery({ product }: { product: Product }) {
             >
               <Icon name="chevron_right" />
             </button>
-            <div className="absolute bottom-9 left-1/2 flex -translate-x-1/2 gap-1.5 md:hidden">
+            <div className="absolute bottom-7 left-1/2 flex -translate-x-1/2 md:hidden">
               {product.images.map((_, i) => (
-                <button key={i} type="button" aria-label={`Photo ${i + 1}`} onClick={() => go(i)} className="grid h-5 place-items-center">
+                <button key={i} type="button" aria-label={`Photo ${i + 1}`} onClick={() => go(i)} className="grid h-8 min-w-8 place-items-center">
                   <span className={cn("block h-1.5 rounded-full transition-all", i === index ? "w-6 bg-secondary-container" : "w-1.5 bg-white/70")} />
                 </button>
               ))}

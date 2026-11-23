@@ -9,6 +9,7 @@ import { CategoryBar } from "@/components/home/CategoryBar";
 import { DeliveryEstimator } from "@/components/home/DeliveryEstimator";
 import { DrinksBanner } from "@/components/home/DrinksBanner";
 import { MobileHome } from "@/components/home/MobileHome";
+import { PageTransition } from "@/components/layout/PageTransition";
 
 const SECTIONS = [
   {
@@ -96,9 +97,9 @@ function DesktopHome() {
 
 export default function HomePage() {
   return (
-    <>
+    <PageTransition>
       <DesktopHome />
       <MobileHome />
-    </>
+    </PageTransition>
   );
 }

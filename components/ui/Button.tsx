@@ -35,7 +35,7 @@ interface Common {
 
 export function buttonClasses({ variant = "primary", size = "md", className }: Pick<Common, "variant" | "size" | "className">) {
   return cn(
-    "inline-flex items-center justify-center font-bold whitespace-nowrap select-none transition-all duration-200",
+    "inline-flex items-center justify-center font-bold whitespace-nowrap select-none transition duration-200",
     "active:scale-[0.97] disabled:opacity-50 disabled:pointer-events-none",
     VARIANTS[variant],
     SIZES[size],

@@ -5,7 +5,7 @@ import { readState } from "./helpers";
 test.describe("Authentication", () => {
   test("phone login validates input, then signs in with the SMS code", async ({ page }) => {
     await page.goto("/connexion");
-    const send = page.getByRole("button", { name: "Recevoir mon code de confirmation" });
+    const send = page.getByRole("button", { name: /Recevoir mon code/ });
     await send.click();
     await expect(page.getByText("Veuillez saisir votre numéro de mobile.")).toBeVisible();
 

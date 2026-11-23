@@ -51,7 +51,9 @@ export function Sheet({ open, onClose, title, description, children, footer, cla
     const overflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     const t = setTimeout(() => {
-      const field = panelRef.current?.querySelector<HTMLElement>("input,select,textarea");
+      // On touch screens, focusing a field would pop the keyboard over the sheet as it opens.
+      const touch = window.matchMedia("(pointer: coarse)").matches;
+      const field = touch ? null : panelRef.current?.querySelector<HTMLElement>("input,select,textarea");
       if (field) field.focus();
       else panelRef.current?.focus();
     }, 50);
@@ -64,16 +66,20 @@ export function Sheet({ open, onClose, title, description, children, footer, cla
   }, [open, onClose]);
 
   if (!hydrated) return null;
+  // Bottom sheet rises from the screen edge on phones; centred modal scales in on md+.
+  const mobile = window.matchMedia("(max-width: 767px)").matches;
+  const hidden = mobile ? { y: "100%" } : { y: 16, scale: 0.97, opacity: 0 };
 
   return createPortal(
     <AnimatePresence>
       {open && (
         <div className="fixed inset-0 z-[80] flex items-end justify-center md:items-center md:p-6">
           <motion.div
-            className="absolute inset-0 bg-on-surface/40 backdrop-blur-[2px]"
+            className="absolute inset-0 bg-on-surface/45 md:backdrop-blur-[2px]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
             onClick={onClose}
           />
           <motion.div
@@ -82,10 +88,10 @@ export function Sheet({ open, onClose, title, description, children, footer, cla
             aria-modal="true"
             aria-labelledby={titleId}
             tabIndex={-1}
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 40, opacity: 0 }}
-            transition={{ type: "spring", stiffness: 380, damping: 34 }}
+            initial={hidden}
+            animate={{ y: 0, scale: 1, opacity: 1 }}
+            exit={{ ...hidden, transition: { duration: 0.22, ease: [0.4, 0, 1, 1] } }}
+            transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
             className={cn(
               "relative flex max-h-[92dvh] w-full flex-col rounded-t-3xl bg-surface-container-lowest shadow-float outline-none md:max-w-lg md:rounded-3xl",
               className,

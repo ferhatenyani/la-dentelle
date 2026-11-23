@@ -85,13 +85,13 @@ export function TrackingMap({
         </Marker>
         {snap.status === "en_route" && (
           <motion.div
-            className="absolute -translate-x-1/2 -translate-y-1/2"
+            className="pointer-events-none absolute inset-0"
             initial={false}
-            animate={{ left: `${courier.x * 100}%`, top: `${courier.y * 100}%` }}
-            transition={{ type: "spring", stiffness: 40, damping: 14 }}
+            animate={{ x: `${courier.x * 100}%`, y: `${courier.y * 100}%` }}
+            transition={{ type: "spring", stiffness: 60, damping: 18 }}
             data-testid="courier-marker"
           >
-            <div className="flex flex-col items-center gap-1">
+            <div className="absolute left-0 top-0 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1">
               <span className="relative grid size-12 place-items-center rounded-full bg-secondary-container text-on-secondary-fixed shadow-lg ring-4 ring-white">
                 <span className="absolute inset-0 animate-ping rounded-full bg-secondary-container/50" />
                 <Icon name="electric_moped" size={22} className="relative" />

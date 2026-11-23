@@ -114,7 +114,7 @@ export function FavoriteButton({ product, className, size = 28 }: { product: Pic
       }}
       style={{ width: size, height: size }}
       className={cn(
-        "z-10 grid place-items-center rounded-full bg-surface-container-lowest/90 shadow-sm backdrop-blur-sm transition-colors",
+        "z-10 grid place-items-center rounded-full before:absolute before:-inset-2 before:content-[''] bg-surface-container-lowest/95 shadow-sm transition-colors md:bg-surface-container-lowest/90 md:backdrop-blur-sm",
         active ? "text-error" : "text-outline hover:text-error",
         className,
       )}

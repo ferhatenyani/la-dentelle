@@ -12,6 +12,16 @@ export const MOBILE_NAV = [
   { href: "/compte", label: "Profil", icon: "account_circle", match: (p: string) => p.startsWith("/compte") },
 ];
 
+/**
+ * Signed-out visitors go straight to the login (and come back afterwards) instead of landing on
+ * /compte only to be redirected, which played two page transitions in a row.
+ */
+export const navHref = (href: string, signedIn: boolean) => (href === "/compte" && !signedIn ? "/connexion?next=%2Fcompte" : href);
+
+/** Login link that brings the user back to the page they were on. */
+export const loginHref = (pathname: string) =>
+  pathname === "/" || pathname.startsWith("/connexion") ? "/connexion" : `/connexion?next=${encodeURIComponent(pathname)}`;
+
 interface MobileRoute {
   title: string;
   back?: string;

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FORM&FIELD — Cinematic Ecommerce Navigation Demo</title>
+<style>
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#292e27;background:#f5f6f3}
+*{box-sizing:border-box}
+body{margin:0;padding:32px 16px}
+.demo{max-width:1100px;margin:0 auto;background:#fff;border:1px solid #e4e7e0;border-radius:15px;overflow:hidden}
+.head{height:62px;padding:0 22px;border-bottom:1px solid #eceee9;display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative;z-index:2;background:white}
+.logo{font-size:17px;font-weight:800;letter-spacing:-.8px;white-space:nowrap}
+.logo i{font-style:normal;color:#879779}
+nav{display:flex;gap:4px}
+nav button{border:0;background:transparent;padding:9px 12px;border-radius:7px;color:#777d73;font-size:12px;cursor:pointer}
+nav button.active{background:#eef1e9;color:#303b2b;font-weight:700}
+.tag{font-size:10px;color:#899084;white-space:nowrap}
+.viewport{position:relative;min-height:440px;overflow:hidden;background:#f8f9f6;isolation:isolate}
+.page{position:absolute;inset:0;padding:27px 26px 30px;background:white;will-change:transform,opacity,filter;transform-origin:center center}
+.page.current{position:relative}
+.eyebrow{font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:#87927d;font-weight:700}
+h2{font-size:clamp(29px,4vw,43px);line-height:1.04;letter-spacing:-1.8px;font-weight:650;margin:10px 0}
+p{font-size:12px;line-height:1.65;color:#7b8077;margin:0}
+.hero{display:grid;grid-template-columns:1fr 1.05fr;gap:24px;align-items:center;margin-bottom:24px}
+.heroimg{height:205px;border-radius:10px;overflow:hidden;background:#eceee8}
+img{width:100%;height:100%;object-fit:cover;display:block}
+.cta{margin-top:18px;padding:11px 15px;border:0;border-radius:6px;background:#303c2c;color:white;font-size:11px;cursor:pointer}
+.bar{display:flex;align-items:center;justify-content:space-between;margin:17px 0 12px}
+.bar strong{font-size:13px}
+.bar span{font-size:10px;color:#8a8e85}
+.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.photo{height:125px;border-radius:8px;overflow:hidden;background:#f0f0ec}
+.products strong{display:block;font-size:11px;margin-top:8px;font-weight:650}
+.products small{font-size:10px;color:#83877f}
+.account{max-width:520px;margin:0 auto}
+.person{display:flex;align-items:center;gap:13px;margin:24px 0}
+.avatar{height:48px;width:48px;border-radius:50%;background:#e9ede4;display:grid;place-items:center;color:#65745b}
+.person strong{font-size:13px}
+.person p{font-size:11px}
+.line{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid #eceee9;font-size:12px}
+.line span:last-child{color:#8b9087}
+.footer{background:#fafbf9;border-top:1px solid #eceee9;padding:11px 17px;display:flex;justify-content:space-between;color:#858b80;font-size:10px}
+.page.entering .reveal{animation:shopReveal .48s cubic-bezier(.22,1,.36,1) both}
+.page.entering .reveal:nth-child(2){animation-delay:45ms}
+.page.entering .reveal:nth-child(3){animation-delay:85ms}
+@keyframes shopReveal{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:540px){
+ body{padding:12px 8px}
+ .head{height:auto;min-height:60px;flex-wrap:wrap;padding:11px 13px}
+ nav{width:100%;justify-content:space-between}
+ nav button{padding:8px 9px;font-size:11px}
+ .tag{display:none}
+ .page{padding:22px 15px}
+ .hero{grid-template-columns:1fr;gap:15px}
+ .heroimg{height:155px}
+ .photo{height:90px}
+ .viewport{min-height:450px}
+}
+@media(prefers-reduced-motion:reduce){.page.entering .reveal{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="demo" id="shop-v3">
+<header class="head">
+ <div class="logo">FORM<i>&</i>FIELD</div>
+ <nav aria-label="Demo pages">
+  <button class="active" data-route="home">Home</button>
+  <button data-route="products">Products</button>
+  <button data-route="favorites">Favorites</button>
+  <button data-route="profile">Profile</button>
+ </nav>
+ <div class="tag">Objects for everyday living</div>
+</header>
+<div class="viewport">
+<section class="page current" data-content="home">
+ <div class="hero reveal"><div><div class="eyebrow">The new collection</div><h2>Made for<br>everyday living.</h2><p>Thoughtful pieces. Timeless design. A little more intention in the things you choose.</p><button class="cta" data-jump="products">Explore collection&nbsp; ↗</button></div><div class="heroimg"><img alt="Modern interior" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=850&auto=format&fit=crop&q=80"></div></div>
+ <div class="bar reveal"><strong>Selected for you</strong><span>DISCOVER MORE ↗</span></div>
+ <div class="products reveal">
+  <div><div class="photo"><img alt="Chair" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=450&auto=format&fit=crop&q=80"></div><strong>Studio Chair</strong><small>$189.00</small></div>
+  <div><div class="photo"><img alt="Tote" src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=450&auto=format&fit=crop&q=80"></div><strong>Everyday Tote</strong><small>$84.00</small></div>
+  <div><div class="photo"><img alt="Shoes" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=450&auto=format&fit=crop&q=80"></div><strong>Runner One</strong><small>$120.00</small></div>
+ </div>
+</section>
+</div>
+<div class="footer"><span>Interactive preview · v3</span><span>Parallax push · layered entrance</span></div>
+</div>
+<script>
+(()=>{
+const root=document.getElementById('shop-v3');
+if(!root||root.dataset.init)return;
+root.dataset.init='1';
+const viewport=root.querySelector('.viewport');
+const nav=[...root.querySelectorAll('[data-route]')];
+const order=['home','products','favorites','profile'];
+let active='home',locked=false;
+const img=(id,alt)=>`<img alt="${alt}" src="https://images.unsplash.com/${id}?w=500&auto=format&fit=crop&q=80">`;
+const prod=(n,p,id)=>`<div class="reveal"><div class="photo">${img(id,n)}</div><strong>${n}</strong><small>${p}</small></div>`;
+const data={
+home:`<div class="hero reveal"><div><div class="eyebrow">The new collection</div><h2>Made for<br>everyday living.</h2><p>Thoughtful pieces. Timeless design. A little more intention in the things you choose.</p><button class="cta" data-jump="products">Explore collection&nbsp; ↗</button></div><div class="heroimg">${img('photo-1600210492486-724fe5c67fb0','Interior')}</div></div><div class="bar reveal"><strong>Selected for you</strong><span>DISCOVER MORE ↗</span></div><div class="products reveal">${prod('Studio Chair','$189.00','photo-1505693416388-ac5ce068fe85')}${prod('Everyday Tote','$84.00','photo-1548036328-c9fa89d128fa')}${prod('Runner One','$120.00','photo-1542291026-7eec264c27ff')}</div>`,
+products:`<div class="reveal"><div class="eyebrow">The collection</div><h2>All products</h2><p>Find something you'll keep coming back to.</p></div><div class="bar reveal"><strong>Explore the collection</strong><span>12 PRODUCTS</span></div><div class="products reveal">${prod('Studio Chair','$189.00','photo-1505693416388-ac5ce068fe85')}${prod('Everyday Tote','$84.00','photo-1548036328-c9fa89d128fa')}${prod('Runner One','$120.00','photo-1542291026-7eec264c27ff')}</div>`,
+favorites:`<div class="reveal"><div class="eyebrow">Your shortlist</div><h2>Favorites</h2><p>The pieces you've saved for later.</p></div><div class="bar reveal"><strong>Saved items</strong><span>2 ITEMS</span></div><div class="products reveal">${prod('Everyday Tote','$84.00','photo-1548036328-c9fa89d128fa')}${prod('Runner One','$120.00','photo-1542291026-7eec264c27ff')}</div>`,
+profile:`<div class="account"><div class="reveal"><div class="eyebrow">Your account</div><h2>Welcome back.</h2><p>Manage your details and keep track of your activity.</p></div><div class="person reveal"><div class="avatar">JD</div><div><strong>Jamie Doe</strong><p>jamie@example.com</p></div></div><div class="reveal"><div class="line"><span>Personal information</span><span>Manage&nbsp; ↗</span></div><div class="line"><span>Orders & returns</span><span>View orders&nbsp; ↗</span></div><div class="line"><span>Addresses</span><span>Manage&nbsp; ↗</span></div><div class="line"><span>Account preferences</span><span>Edit&nbsp; ↗</span></div></div></div>`
+};
+function go(to){
+ if(locked||to===active||!data[to])return;
+ locked=true;
+ const from=active;
+ const dir=order.indexOf(to)>order.indexOf(from)?1:-1;
+ const old=viewport.querySelector('.page');
+ const next=document.createElement('section');
+ next.className='page entering';
+ next.innerHTML=data[to];
+ next.style.transform=`translateX(${dir*90}px) scale(.965)`;
+ next.style.opacity='0';
+ next.style.filter='blur(2px)';
+ viewport.appendChild(next);
+ nav.forEach(b=>b.classList.toggle('active',b.dataset.route===to));
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(reduced){
+  old.remove();next.classList.remove('entering');next.classList.add('current');
+  next.style.cssText='';active=to;locked=false;return;
+ }
+ requestAnimationFrame(()=>requestAnimationFrame(()=>{
+  const timing='440ms cubic-bezier(.22,1,.36,1)';
+  old.style.transition=`transform ${timing},opacity ${timing},filter ${timing}`;
+  next.style.transition=`transform ${timing},opacity ${timing},filter ${timing}`;
+  old.style.transform=`translateX(${-dir*58}px) scale(.975)`;
+  old.style.opacity='.42';old.style.filter='blur(1.5px)';
+  next.style.transform='translateX(0) scale(1)';
+  next.style.opacity='1';next.style.filter='blur(0)';
+ }));
+ setTimeout(()=>{
+  old.remove();next.classList.remove('entering');next.classList.add('current');
+  next.style.cssText='';active=to;locked=false;
+ },470);
+}
+nav.forEach(b=>b.addEventListener('click',()=>go(b.dataset.route)));
+root.addEventListener('click',e=>{
+ const b=e.target.closest('[data-jump]');
+ if(b)go(b.dataset.jump);
+});
+})();
+</script>
+</body>
+</html>

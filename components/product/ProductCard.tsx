@@ -24,7 +24,7 @@ export function FeatureCard({ product, priority }: { product: Product; priority?
   return (
     <article
       data-testid="product-card"
-      className="group relative flex flex-col justify-between rounded-2xl border border-outline-variant/30 bg-surface-container-lowest p-3 shadow-sm transition-all duration-300 hover:border-primary/40 hover:shadow-xl"
+      className="group relative flex flex-col justify-between rounded-2xl border border-outline-variant/30 bg-surface-container-lowest p-3 shadow-sm transition duration-300 hover:border-primary/40 hover:shadow-xl"
     >
       <div>
         <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
@@ -40,7 +40,7 @@ export function FeatureCard({ product, priority }: { product: Product; priority?
                 "absolute left-2.5 top-2.5 rounded-md px-2 py-0.5 text-[11px] font-bold",
                 isSweet || product.badge === "Best-Seller"
                   ? "bg-secondary-container text-on-secondary-fixed"
-                  : "bg-primary/90 text-white backdrop-blur",
+                  : "bg-primary/90 text-white md:backdrop-blur",
               )}
             >
               {product.badge}
@@ -49,7 +49,7 @@ export function FeatureCard({ product, priority }: { product: Product; priority?
           {isSweet ? (
             <FavoriteButton product={product} className="absolute right-2.5 top-2.5" />
           ) : (
-            <span className="absolute bottom-2.5 right-2.5 flex items-center gap-1 rounded bg-black/60 px-2 py-0.5 text-[11px] font-semibold text-white backdrop-blur">
+            <span className="absolute bottom-2.5 right-2.5 flex items-center gap-1 rounded bg-black/60 px-2 py-0.5 text-[11px] font-semibold text-white md:backdrop-blur">
               <Icon name="schedule" size={13} className="text-secondary-fixed" /> {product.prepMinutes} min
             </span>
           )}
@@ -89,7 +89,7 @@ export function CatalogCard({ product, priority }: { product: Product; priority?
   return (
     <article
       data-testid="product-card"
-      className="group relative flex w-full flex-col overflow-hidden rounded-2xl bg-surface-container-lowest shadow-sm transition-all hover:shadow-md"
+      className="group relative flex w-full flex-col overflow-hidden rounded-2xl bg-surface-container-lowest shadow-sm transition hover:shadow-md"
     >
       <div className="relative aspect-[16/10] w-full">
         <ProductImage
@@ -98,7 +98,7 @@ export function CatalogCard({ product, priority }: { product: Product; priority?
           imgClassName="transition-transform duration-500 group-hover:scale-105"
           priority={priority}
         />
-        <span className="absolute left-3 top-3 rounded-full bg-surface-container-lowest/90 px-2.5 py-1 text-label-sm uppercase tracking-wider text-secondary backdrop-blur-md">
+        <span className="absolute left-3 top-3 rounded-full bg-surface-container-lowest/90 px-2.5 py-1 text-label-sm uppercase tracking-wider text-secondary md:backdrop-blur-md">
           {product.origin}
         </span>
         <FavoriteButton product={product} className="absolute right-3 top-3" size={32} />

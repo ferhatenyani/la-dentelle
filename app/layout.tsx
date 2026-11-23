@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import localFont from "next/font/local";
+import { MotionProvider } from "@/components/layout/MotionProvider";
+import { NavDirection } from "@/components/layout/NavDirection";
 import { Toaster } from "@/components/ui/Toast";
 import "./globals.css";
 
@@ -45,8 +47,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Aller au contenu
         </a>
-        {children}
-        <Toaster />
+        <MotionProvider>
+          {children}
+          <Toaster />
+        </MotionProvider>
+        <NavDirection />
       </body>
     </html>
   );

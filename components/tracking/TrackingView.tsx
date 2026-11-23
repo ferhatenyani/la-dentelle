@@ -39,10 +39,10 @@ function StepTimeline({ snap, order }: { snap: TrackingSnapshot; order: Order })
     <ol className="relative grid grid-cols-4 gap-2" aria-label="Progression de la commande">
       <span className="absolute left-[12.5%] right-[12.5%] top-6 h-[3px] rounded-full bg-surface-container-high" aria-hidden />
       <motion.span
-        className="absolute left-[12.5%] top-6 h-[3px] rounded-full bg-primary"
-        initial={{ width: 0 }}
-        animate={{ width: `${(snap.stepIndex / 3) * 75}%` }}
-        transition={{ duration: 1, ease: [0.2, 0.8, 0.2, 1] }}
+        className="absolute left-[12.5%] right-[12.5%] top-6 h-[3px] origin-left rounded-full bg-primary"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: snap.stepIndex / 3 }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         aria-hidden
       />
       {STATUS_STEPS.map((s, i) => {

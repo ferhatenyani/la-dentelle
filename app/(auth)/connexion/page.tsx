@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { AuthScreen } from "@/components/auth/AuthScreen";
+import { PageTransition } from "@/components/layout/PageTransition";
 
 export const metadata: Metadata = {
   title: "Connexion",
@@ -9,8 +10,10 @@ export const metadata: Metadata = {
 
 export default function ConnexionPage() {
   return (
-    <Suspense fallback={<div className="min-h-dvh" aria-busy="true" />}>
-      <AuthScreen />
-    </Suspense>
+    <PageTransition>
+      <Suspense fallback={<div className="min-h-dvh" aria-busy="true" />}>
+        <AuthScreen />
+      </Suspense>
+    </PageTransition>
   );
 }

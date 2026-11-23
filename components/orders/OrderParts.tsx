@@ -94,7 +94,7 @@ export function ActiveOrderCard({ order, now }: { order: Order; now: number }) {
         <span>Dégustation</span>
       </div>
       <div className="mb-5 h-1.5 overflow-hidden rounded-full bg-surface-container-high">
-        <motion.div className="h-full rounded-full bg-primary" initial={{ width: 0 }} animate={{ width: `${pct}%` }} transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }} />
+        <motion.div className="h-full w-full rounded-full bg-primary" initial={{ x: "-100%" }} animate={{ x: `${pct - 100}%` }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }} />
       </div>
       <div className="mb-5 flex items-center justify-between gap-4 rounded-xl bg-surface-container-low p-4">
         <div className="min-w-0">
@@ -152,7 +152,7 @@ export function ActiveOrderHero({ order, now }: { order: Order; now: number }) {
         <p className="whitespace-nowrap text-headline-sm font-bold text-secondary-container">{formatPrice(order.total)}</p>
       </div>
       <div className="relative mt-5 h-1.5 overflow-hidden rounded-full bg-white/15">
-        <motion.div className="h-full rounded-full bg-secondary-container" initial={{ width: 0 }} animate={{ width: `${pct}%` }} transition={{ duration: 0.9 }} />
+        <motion.div className="h-full w-full rounded-full bg-secondary-container" initial={{ x: "-100%" }} animate={{ x: `${pct - 100}%` }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }} />
       </div>
       <div className="relative mt-4 flex items-center justify-between text-body-sm">
         <span className="flex items-center gap-2 text-primary-fixed">

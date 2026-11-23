@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Icon } from "@/components/ui/Icon";
 import { Catalogue, CatalogueSkeleton } from "@/components/catalogue/Catalogue";
+import { PageTransition } from "@/components/layout/PageTransition";
 
 export const metadata: Metadata = {
   title: "Carte & Commandes",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function MenuPage() {
   return (
-    <div className="flex w-full flex-col">
+    <PageTransition>
       <div className="mx-auto hidden w-full max-w-[1320px] px-6 pb-6 pt-8 md:block">
         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <div>
@@ -38,6 +39,6 @@ export default function MenuPage() {
       <Suspense fallback={<CatalogueSkeleton />}>
         <Catalogue />
       </Suspense>
-    </div>
+    </PageTransition>
   );
 }
